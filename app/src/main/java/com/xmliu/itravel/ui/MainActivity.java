@@ -35,7 +35,6 @@ import com.xmliu.itravel.utils.AppManager;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.LogUtil;
 import com.xmliu.itravel.utils.StringUtils;
-import com.xmliu.itravel.utils.ToastUtil;
 import com.xmliu.itravel.widget.ListRightBottomBar;
 
 import java.util.ArrayList;
@@ -108,14 +107,10 @@ public class MainActivity extends AppCompatActivity {
         nicknameTV = (TextView) findViewById(R.id.main_drawerlayout_nickname);
 
         settingLayout = (LinearLayout) findViewById(R.id.drawer_id_setting_layout);
-        boolean isUserSelf = false;
-        int height;
-        if (isUserSelf) {
-            height = (int) getResources().getDimension(R.dimen.height_58_160);
-        } else {
-            height = (int) getResources().getDimension(R.dimen.height_40_160);
-        }
-        listRightBottomBar = new ListRightBottomBar(this, height, isUserSelf);
+
+        int height = (int) getResources().getDimension(R.dimen.height_40_160);
+        listRightBottomBar = new ListRightBottomBar(this, height, false);
+
         BP.init(this, "07b752a64abdf34127887ada169d9709");
         initToolBar();
         initDrawerLayout();
@@ -594,9 +589,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, AboutActivity.class));
             return true;
         } else if (id == R.id.action_alipay) {
-//            是否安装了支付宝
+            //是否安装了支付宝
             if (CommonUtils.isInstallApp(this, "com.eg.android.AlipayGphone")) {
-                BP.pay(MainActivity.this, "请我喝杯水", "水乃生命之源", 2, true, new PListener() {
+                BP.pay(MainActivity.this, "请我喝杯水", "水乃生命之源", 0.02, true, new PListener() {
                     @Override
                     public void orderId(String s) {
                         LogUtil.i(TAG, "alipay orderId:" + s);
@@ -604,12 +599,13 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void succeed() {
-                        ToastUtil.showToast(MainActivity.this, "谢谢打赏");
+                        CommonUtils.showToast(MainActivity.this, "谢谢打赏");
                         LogUtil.i(TAG, "alipay success");
                     }
 
                     @Override
                     public void fail(int i, String s) {
+                        CommonUtils.showToast(MainActivity.this, "打赏失败，不要气馁，再试一次");
                         LogUtil.i(TAG, "fail code=" + i + ";reason:" + s);
                     }
 
