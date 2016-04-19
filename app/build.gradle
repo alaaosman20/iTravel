@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    signingConfigs {
+        release {
+            storeFile file(properties.getProperty("filepath"))
+            storePassword properties.getProperty("storePassword")
+            keyAlias properties.getProperty("keyAlias")
+            keyPassword properties.getProperty("keyPassword")
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.xmliu.itravel"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            // 是否进行混淆
+            minifyEnabled false
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+repositories {
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
+    maven { url "https://jitpack.io" }
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.3@aar') {
+        transitive = true
+    }
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    //    compile 'com.github.paolorotolo:appintro:3.3.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.github.frank-zhu:pullzoomview:1.0.0'
+    compile 'com.github.chrisbanes.photoview:library:1.2.2'
+    compile 'com.roughike:bottom-bar:1.2.9'
+    compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.4'
+    compile name: 'SMSSDK-2.0.1', ext: 'aar'
+    compile project(':MaterialDesign')
+    compile files('libs/BmobSDK_V3.a_bg.5_1111.jar')
+    compile files('libs/ShareSDK-Core-2.6.6.jar')
+    compile files('libs/ShareSDK-Email-2.6.6.jar')
+    compile files('libs/ShareSDK-QQ-2.6.6.jar')
+    compile files('libs/ShareSDK-QZone-2.6.6.jar')
+    compile files('libs/ShareSDK-ShortMessage-2.6.6.jar')
+    compile files('libs/ShareSDK-SinaWeibo-2.6.6.jar')
+    compile files('libs/ShareSDK-Wechat-2.6.6.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.6.6.jar')
+    compile files('libs/ShareSDK-Wechat-Favorite-2.6.6.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.6.6.jar')
+    compile files('libs/AMap_2DMap_v2.6.0_20150916.jar')
+    compile files('libs/AMap_Location_v1.4.1_20150917.jar')
+    compile files('libs/AMap_Search_v2.6.0_20150914.jar')
+    compile files('libs/AMap_Location_v2.3.0_20160112.jar')
+    compile files('libs/BmobPay_v2.6_160411.jar')
+}

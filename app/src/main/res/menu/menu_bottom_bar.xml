@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  *
+  ~  *************************************************************************
+  ~  *
+  ~  *  Copyright (C) 2015 XMLIU diyangxia@163.com.
+  ~  *
+  ~  *                       All rights reserved.
+  ~  *
+  ~  **************************************************************************
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/music1"
+        android:icon="@mipmap/stragey_tab_qy"
+        android:title="穷游"/>
+    <item
+        android:id="@+id/music2"
+        android:icon="@mipmap/stragey_tab_mfw"
+        android:title="蚂蜂窝"/>
+    <item
+        android:id="@+id/music3"
+        android:icon="@mipmap/stragey_tab_xc"
+        android:title="携程"/>
+    <item
+        android:id="@+id/music4"
+        android:icon="@mipmap/stragey_tab_qn"
+        android:title="去哪儿"/>
+</menu>

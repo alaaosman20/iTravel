@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  *
+  ~  *************************************************************************
+  ~  *
+  ~  *  Copyright (C) 2015 XMLIU diyangxia@163.com.
+  ~  *
+  ~  *                       All rights reserved.
+  ~  *
+  ~  **************************************************************************
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="搜索"
+        android:inputType="textCapWords"
+        android:imeOptions="actionSearch"
+        app:showAsAction="ifRoom" />
+</menu>

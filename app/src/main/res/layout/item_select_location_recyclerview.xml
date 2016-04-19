@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  *
+  ~  *************************************************************************
+  ~  *
+  ~  *  Copyright (C) 2015 XMLIU diyangxia@163.com.
+  ~  *
+  ~  *                       All rights reserved.
+  ~  *
+  ~  **************************************************************************
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/width_5_160"
+              android:paddingTop="@dimen/width_3_160"
+              android:id="@+id/recyclerview_item_select_location_layout"
+              android:paddingBottom="@dimen/width_3_160"
+              android:gravity="center_vertical"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/recyclerview_item_title"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:text="AAA"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="BBB"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/width_1_160"
+        android:id="@+id/recyclerview_item_content"
+        android:textColor="@color/gray"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

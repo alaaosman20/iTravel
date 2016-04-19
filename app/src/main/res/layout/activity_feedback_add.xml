@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/weixin_bgcolor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="@dimen/width_40_160"
+            android:layout_height="@dimen/width_40_160"
+            android:layout_marginLeft="@dimen/width_10_160"
+            android:layout_marginRight="@dimen/width_10_160"
+            android:layout_marginTop="@dimen/width_5_160">
+
+            <ImageView
+                android:id="@+id/id_feedback_upload_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/compose_pic_add"/>
+
+            <ImageView
+                android:id="@+id/id_feedback_display_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                 />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/id_feedback_delete_iv"
+                android:padding="@dimen/width_3_160"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@mipmap/common_image_right_delete_icon"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="文字表达不清楚？可添加图片"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/id_feedback_content_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/width_10_160"
+        android:layout_marginRight="@dimen/width_10_160"
+        android:layout_marginTop="@dimen/width_5_160"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:hint="请输入意见或者建议"
+        android:imeOptions="actionNext"
+        android:paddingLeft="@dimen/width_3_160"
+        app:met_baseColor="@color/black"
+        app:met_clearButton="true"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="请输入意见或者建议"
+        app:met_primaryColor="#982360"
+        app:met_textColorHint="@color/gray"
+        app:met_underlineColor="@color/gray"/>
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/id_feedback_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_14_160"
+        android:layout_marginBottom="@dimen/width_5_160"
+        android:layout_marginLeft="@dimen/width_10_160"
+        android:layout_marginRight="@dimen/width_10_160"
+        android:layout_marginTop="@dimen/width_5_160"
+        android:background="@color/darkturquoise"
+        android:enabled="false"
+        android:text="提 交"
+        android:textColor="#ffffff"
+        />
+</LinearLayout>

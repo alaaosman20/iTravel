@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/height_5_160"
+        android:orientation="vertical" >
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/height_5_160"
+            android:id="@+id/guideGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="@dimen/height_20_160">
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/id_guide_login_btn"
+            android:layout_width="@dimen/width_40_160"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/height_14_160"
+            android:layout_marginRight="@dimen/width_15_160"
+            android:background="@color/darkturquoise"
+            android:text="登录"
+            android:textColor="#ffffff"
+            />
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:layout_gravity="center_vertical"
+            android:id="@+id/id_guide_register_btn"
+            android:layout_width="@dimen/width_40_160"
+            android:layout_height="@dimen/height_14_160"
+            android:layout_marginLeft="@dimen/width_15_160"
+            android:background="@color/darkturquoise"
+            android:text="注册"
+            android:textColor="#ffffff"
+            />
+    </LinearLayout>
+
+</LinearLayout>

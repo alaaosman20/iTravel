@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/weixin_bgcolor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/user_center_indexpage_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_25_160"
+        android:layout_marginTop="@dimen/height_2_160"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_center_avatar_iv"
+            android:layout_width="@dimen/height_20_160"
+            android:layout_height="@dimen/height_20_160"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/width_5_160"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/width_1_160"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/width_3_160"
+            android:layout_toRightOf="@+id/user_center_avatar_iv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_center_nickname_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/height_2_160"
+                android:text="天煞将军"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/user_center_signature_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/height_2_160"
+                android:text="我是一只来自北方的狼"
+                android:textColor="@color/gray"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/width_10_160"
+            android:layout_height="@dimen/height_10_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_5_160"
+            android:src="@mipmap/common_next"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/height_5_160"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_10_160"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:layout_marginTop="@dimen/height_1_160"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/width_10_160"
+                android:layout_height="@dimen/height_10_160"
+                android:src="@mipmap/user_center_comment_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/width_5_160"
+                    android:text="我的评论"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_10_160"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:layout_marginTop="@dimen/height_1_160"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/width_10_160"
+                android:layout_height="@dimen/height_10_160"
+                android:src="@mipmap/user_center_agree_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_5_160"
+                android:text="我的赞同"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_10_160"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:layout_marginTop="@dimen/height_1_160"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/width_10_160"
+                android:layout_height="@dimen/height_10_160"
+                android:src="@mipmap/user_center_feedback_icon"/>
+
+            <TextView
+                android:id="@+id/id_user_center_feedback_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_5_160"
+                android:text="我的反馈"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_center_password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_10_160"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:layout_marginTop="@dimen/height_1_160"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/width_10_160"
+                android:layout_height="@dimen/height_10_160"
+                android:src="@mipmap/user_center_update_password_icon"/>
+
+            <TextView
+                android:id="@+id/id_user_center_update_pasword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_5_160"
+                android:text="修改密码"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/id_user_center_logout_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/height_2_160"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:layout_marginRight="@dimen/width_5_160"
+            android:layout_marginTop="@dimen/height_2_160"
+            android:background="@color/theme_color"
+            android:gravity="center"
+            android:paddingBottom="@dimen/height_2_160"
+            android:paddingTop="@dimen/height_2_160"
+            android:text="退出登录"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</LinearLayout>

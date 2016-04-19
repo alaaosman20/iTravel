@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/weixin_bgcolor"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/height_22_160"
+        android:layout_height="@dimen/height_22_160"
+        android:layout_marginTop="@dimen/height_10_160"
+        android:src="@mipmap/about_logo_icon"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/height_2_160"
+        android:text="当前版本：1.0 "
+        android:textColor="@color/gray"
+        android:textSize="12sp"/>
+
+    <RelativeLayout
+        android:id="@+id/setting_menu_about_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_11_160"
+        android:layout_marginTop="@dimen/height_10_160"
+        android:background="@drawable/layout_selector"
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            />
+
+        <TextView
+            android:id="@+id/setting_menu_about_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/width_9_160"
+            android:gravity="center"
+            android:text="检测更新"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:src="@mipmap/common_next"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/width_8_160"
+            android:background="@color/grey"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_11_160"
+        android:background="@drawable/layout_selector"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/width_9_160"
+            android:gravity="center"
+            android:text="软件评分"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:src="@mipmap/common_next"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/width_8_160"
+            android:background="@color/grey"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_11_160"
+        android:background="@drawable/layout_selector"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/width_9_160"
+            android:gravity="center"
+            android:text="意见反馈"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:src="@mipmap/common_next"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grey"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/height_3_160"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_11_160"
+        android:background="@drawable/layout_selector"
+        android:orientation="horizontal"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/width_9_160"
+            android:gravity="center"
+            android:text="新手教程"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:src="@mipmap/common_next"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/width_8_160"
+            android:background="@color/grey"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_11_160"
+        android:background="@drawable/layout_selector"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/width_9_160"
+            android:gravity="center"
+            android:text="关于作者"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:src="@mipmap/common_next"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grey"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/height_18_160"
+        android:text="用户协议"
+        android:textColor="@color/blue"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/height_2_160"
+        android:text="©2011 - 2016 itravel.com All rights reserved"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

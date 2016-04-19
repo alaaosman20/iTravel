@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/width_5_160"
+        android:layout_marginRight="@dimen/width_5_160"
+        android:layout_marginTop="@dimen/width_5_160">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/id_addnote_content_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:gravity="top"
+                android:minHeight="@dimen/height_30_160"
+                android:hint="分享你旅程中的点点滴滴吧，限140字哦~"
+                android:imeOptions="actionNext"
+                android:maxLength="140"
+                android:textSize="14sp"
+                android:padding="@dimen/width_3_160"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/id_add_recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_75_160"
+                android:layout_marginTop="@dimen/height_2_160"
+                android:scrollbars="none"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/width_2_160"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_160"
+            android:layout_above="@+id/id_addnote_submit_btn"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:layout_marginRight="@dimen/width_5_160">
+
+            <LinearLayout
+                android:id="@+id/id_addnote_address_layout"
+                android:background="@drawable/add_bottom_layout_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/width_2_160"
+                android:paddingBottom="@dimen/width_2_160"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+
+                    android:layout_marginLeft="@dimen/width_5_160"
+                    android:id="@+id/id_addnote_location_iv"
+                    android:layout_width="@dimen/width_6_160"
+                    android:layout_height="@dimen/width_8_160"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/map_location_icon"/>
+
+                <TextView
+                    android:id="@+id/id_addnote_address_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/width_2_160"
+                    android:layout_marginRight="@dimen/width_5_160"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:gravity="top"
+                    android:hint="所在位置"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/add_bottom_layout_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingTop="@dimen/width_2_160"
+                android:paddingBottom="@dimen/width_2_160"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.gc.materialdesign.views.CheckBox
+                    android:layout_marginLeft="@dimen/width_5_160"
+                    android:id="@+id/id_addnote_permission"
+                    android:layout_width="@dimen/height_7_160"
+                    android:layout_height="@dimen/height_7_160"
+                    app:check="true"
+                    />
+
+                <TextView
+                    android:id="@+id/id_addnote_permission_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/width_1_160"
+                    android:layout_marginRight="@dimen/width_5_160"
+                    android:text="公开"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/id_addnote_submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_10_160"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/width_2_160"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:layout_marginRight="@dimen/width_5_160"
+            android:layout_marginTop="@dimen/width_1_160"
+            android:background="@drawable/login_other_btn_bg"
+            android:text="发 布"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+</LinearLayout>

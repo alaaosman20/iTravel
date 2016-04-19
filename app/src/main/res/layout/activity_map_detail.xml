@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  *
+  ~  *************************************************************************
+  ~  *
+  ~  *  Copyright (C) 2015 XMLIU diyangxia@163.com.
+  ~  *
+  ~  *                       All rights reserved.
+  ~  *
+  ~  **************************************************************************
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/weixin_bgcolor"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/map_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/height_10_160"
+        android:textColor="@color/black"
+        android:textSize="22sp"/>
+
+    <TextView
+        android:id="@+id/map_detail_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/height_2_160"
+        android:textColor="@color/gray"
+        android:textSize="12sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/height_3_160"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/width_7_160">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/width_7_160"
+            android:paddingTop="@dimen/width_5_160"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="位置"
+                android:textColor="@color/gray"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/map_detail_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_15_160"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="@dimen/width_5_160"
+            android:layout_marginBottom="@dimen/width_5_160"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:background="@color/weixin_bgcolor"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <com.amap.api.maps2d.MapView
+            android:id="@+id/map_detail_map"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_60_160"
+            android:layout_marginBottom="@dimen/width_7_160"
+            android:layout_marginRight="@dimen/width_7_160"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:paddingBottom="@dimen/width_7_160"
+            android:paddingTop="@dimen/width_7_160"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_1_160"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/width_7_160"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="图集"
+                android:textColor="@color/gray"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/map_detail_images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

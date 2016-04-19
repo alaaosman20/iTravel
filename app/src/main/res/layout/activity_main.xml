@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout android:id="@+id/drawerlayou"
+                                        xmlns:android="http://schemas.android.com/apk/res/android"
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+    <!--Main Content-->
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/id_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:navigationIcon="@mipmap/ic_launcher"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_widget"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/aboutUs_recycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="@null"
+                    android:scrollbars="vertical"
+                    />
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/main_edit_buttonfloat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/height_3_160"
+                android:layout_marginBottom="@dimen/height_3_160"
+                android:background="@color/colorPrimary"
+                app:animate="true"
+                app:iconDrawable="@mipmap/myalbum_addpicture"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <!--DrawerLayout Content-->
+    <LinearLayout
+        android:layout_width="@dimen/width_120_160"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/main_drawerlayout_userlayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50_160"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_drawerlayout_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/main_drawerlayout_avatar"
+                android:layout_width="@dimen/height_20_160"
+                android:layout_height="@dimen/height_20_160"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/height_3_160"
+                app:civ_border_color="#FFffffff"
+                app:civ_border_width="@dimen/width_1_160"/>
+
+
+            <TextView
+                android:id="@+id/main_drawerlayout_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_drawerlayout_avatar"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/height_1_160"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/main_drawerlayout_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/height_2_160"
+                android:layout_marginRight="@dimen/height_2_160"
+                android:layout_alignParentTop="true"
+                android:src="@mipmap/user_logout_icon"
+                />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/main_drawerlayout_guide"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_15_160"
+            android:layout_marginLeft="@dimen/width_7_160"
+            android:layout_marginTop="@dimen/height_2_160"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/width_10_160"
+                android:layout_height="@dimen/height_10_160"
+                android:src="@mipmap/icon_mine_travelnote"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_5_160"
+                android:text="驴友攻略"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_drawerlayout_map"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_15_160"
+            android:layout_marginLeft="@dimen/width_7_160"
+            android:layout_marginTop="@dimen/height_2_160"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/width_10_160"
+                android:layout_height="@dimen/height_10_160"
+                android:src="@mipmap/poi_map_icon"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_5_160"
+                android:text="地图记录"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/drawer_id_setting_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_15_160"
+            android:layout_marginLeft="@dimen/width_7_160"
+            android:layout_marginTop="@dimen/height_2_160"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/width_10_160"
+                android:layout_height="@dimen/height_10_160"
+                android:src="@mipmap/icon_play"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_5_160"
+                android:text="系统设置"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
