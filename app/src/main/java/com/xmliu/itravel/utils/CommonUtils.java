@@ -15,6 +15,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Rect;
 import android.util.Log;
@@ -36,6 +37,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -103,6 +105,28 @@ public class CommonUtils {
 		}
 
 		return sb.toString();
+	}
+
+	public static boolean isInstallApp(Context context,String packageName) {
+		Intent weiboIntent = new Intent(Intent.ACTION_SEND);
+		weiboIntent.setType("text/plain");
+		PackageManager pm = context.getPackageManager();
+		List<ResolveInfo> matches = pm.queryIntentActivities(weiboIntent,
+				PackageManager.MATCH_DEFAULT_ONLY);
+		ResolveInfo info = null;
+		for (ResolveInfo each : matches) {
+			String pkgName = each.activityInfo.applicationInfo.packageName;
+			if (packageName.equals(pkgName)) {
+				info = each;
+				break;
+			}
+		}
+		if (info == null) {
+			return false;
+		} else {
+			return true;
+		}
+
 	}
 
 	public static void showExitDialog(final Context context){

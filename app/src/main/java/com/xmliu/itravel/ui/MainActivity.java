@@ -110,12 +110,12 @@ public class MainActivity extends AppCompatActivity {
         settingLayout = (LinearLayout) findViewById(R.id.drawer_id_setting_layout);
         boolean isUserSelf = false;
         int height;
-        if(isUserSelf){
+        if (isUserSelf) {
             height = (int) getResources().getDimension(R.dimen.height_58_160);
-        }else{
+        } else {
             height = (int) getResources().getDimension(R.dimen.height_40_160);
         }
-        listRightBottomBar = new ListRightBottomBar(this,height,isUserSelf);
+        listRightBottomBar = new ListRightBottomBar(this, height, isUserSelf);
         BP.init(this, "07b752a64abdf34127887ada169d9709");
         initToolBar();
         initDrawerLayout();
@@ -212,8 +212,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void addAgree(final String noteId){
-        final UserBean user = BmobUser.getCurrentUser(this,UserBean.class);
+    private void addAgree(final String noteId) {
+        final UserBean user = BmobUser.getCurrentUser(this, UserBean.class);
 
         // 再添加赞之前需要先判断用户是否已点过赞，如果是仅提示用户即可。
 
@@ -259,11 +259,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
 
 
-    private void queryAgree(String noteId){
+    private void queryAgree(String noteId) {
         BmobQuery<UserBean> query = new BmobQuery<>();
         NoteBean post = new NoteBean();
         post.setObjectId(noteId);
@@ -285,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void updateNoteBean(String noteId){
+    private void updateNoteBean(String noteId) {
         NoteBean noteBean = new NoteBean();
         noteBean.setObjectId(noteId);
         noteBean.increment("agreeNum", 1);// 原子计数器
@@ -493,7 +492,7 @@ public class MainActivity extends AppCompatActivity {
                     mListData.clear();
                     mListData.addAll(object);
                     // 创建Adapter，并指定数据集
-                    adapter = new NoteListAdapter(MainActivity.this, mListData,true,false);
+                    adapter = new NoteListAdapter(MainActivity.this, mListData, true, false);
                     // 设置Adapter
                     mRecyclerView.setAdapter(adapter);
                     swipeRefreshLayout.setRefreshing(false);
@@ -596,28 +595,32 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_alipay) {
 //            是否安装了支付宝
-            BP.pay(MainActivity.this, "请我喝杯水", "水乃生命之源", 2, true, new PListener() {
-                @Override
-                public void orderId(String s) {
-                    LogUtil.i(TAG,"alipay orderId:" + s);
-                }
+            if (CommonUtils.isInstallApp(this, "com.eg.android.AlipayGphone")) {
+                BP.pay(MainActivity.this, "请我喝杯水", "水乃生命之源", 2, true, new PListener() {
+                    @Override
+                    public void orderId(String s) {
+                        LogUtil.i(TAG, "alipay orderId:" + s);
+                    }
 
-                @Override
-                public void succeed() {
-                    ToastUtil.showToast(MainActivity.this, "谢谢打赏");
-                    LogUtil.i(TAG,"alipay success");
-                }
+                    @Override
+                    public void succeed() {
+                        ToastUtil.showToast(MainActivity.this, "谢谢打赏");
+                        LogUtil.i(TAG, "alipay success");
+                    }
 
-                @Override
-                public void fail(int i, String s) {
-                    LogUtil.i(TAG,"fail code=" + i +";reason:" + s);
-                }
+                    @Override
+                    public void fail(int i, String s) {
+                        LogUtil.i(TAG, "fail code=" + i + ";reason:" + s);
+                    }
 
-                @Override
-                public void unknow() {
-                    LogUtil.i(TAG,"alipay unknow");
-                }
-            });
+                    @Override
+                    public void unknow() {
+                        LogUtil.i(TAG, "alipay unknow");
+                    }
+                });
+            } else {
+                CommonUtils.showToast(this, "您还未安装支付宝");
+            }
             return true;
         }
 
