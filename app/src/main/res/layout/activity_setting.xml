@@ -4,33 +4,11 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_15_160"
-        android:layout_marginLeft="@dimen/width_5_160"
-        android:layout_marginTop="@dimen/height_5_160"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="@dimen/width_10_160"
-            android:layout_height="@dimen/height_10_160"
-            android:src="@mipmap/map_location_icon"/>
-
-        <TextView
-            android:id="@+id/drawer_id_feedback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/width_10_160"
-            android:text="意见反馈"
-            android:textColor="@color/black"
-            android:textSize="18sp"/>
-    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="摇一摇发送反馈"
+        android:text="是否开启摇一摇发送反"
         android:textColor="@color/black"/>
     <TextView
         android:layout_width="wrap_content"

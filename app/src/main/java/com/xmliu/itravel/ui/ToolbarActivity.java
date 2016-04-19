@@ -1,15 +1,17 @@
 package com.xmliu.itravel.ui;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.xmliu.itravel.BaseApplication;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.utils.AppManager;
+import com.xmliu.itravel.utils.NetWorkUtils;
 import com.xmliu.itravel.utils.ToastUtil;
 import com.xmliu.itravel.utils.ToolBarHelper;
 
@@ -24,11 +26,14 @@ public abstract class ToolbarActivity extends AppCompatActivity {
     private ToolBarHelper mToolBarHelper ;
     public Toolbar toolbar ;
     protected String TAG;
-    protected Context mContext;
+    protected BaseApplication mApplication;
+    protected Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mApplication = (BaseApplication) getApplication();
+        NetWorkUtils.networkStateTips(this);
     }
 
     @Override

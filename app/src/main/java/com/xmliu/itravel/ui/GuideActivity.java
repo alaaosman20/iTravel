@@ -7,10 +7,11 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.gc.materialdesign.views.ButtonRectangle;
 import com.xmliu.itravel.BaseActivity;
 import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
@@ -24,39 +25,25 @@ public class GuideActivity extends BaseActivity {
     private int mImageIds[] = new int[]{R.mipmap.guide01,
             R.mipmap.guide02, R.mipmap.guide03, R.mipmap.guide04};
     private ViewGroup guideGroup;
-    private ImageView[] guideTips;
-    private ButtonRectangle mGuideLoginBtn;
-    private ButtonRectangle mGuideRegisterBtn;
 
+    private ImageView[] guideTips;
+    private boolean fromabout = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        loadGuide();
-    }
-
-    private void loadGuide() {
-//        boolean isFirstTime = mApplication.mSharedPreferences.getBoolean("isFirstTime", true);
-//        if (isFirstTime) {
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉信息栏
+        setContentView(R.layout.activity_guide);
+        fromabout = this.getIntent().getBooleanExtra("fromabout",false);
         init();
         mApplication.mSharedPreferences.edit().putBoolean("isFirstTime", false)
                 .commit();
-//        }
-//        else {
-//            startActivity(new Intent(GuideActivity.this, MainActivity.class));
-//            finish();
-//            mApplication.mSharedPreferences.edit().putBoolean("isFirstTime", false)
-//                    .commit();
-//        }
     }
 
     private void init() {
-        setContentView(R.layout.activity_guide);
 
         ViewPager mPager = (ViewPager) findViewById(R.id.guide_pager);
         guideGroup = (ViewGroup) findViewById(R.id.guideGroup);
-        mGuideLoginBtn = (ButtonRectangle) findViewById(R.id.id_guide_login_btn);
-        mGuideRegisterBtn = (ButtonRectangle) findViewById(R.id.id_guide_register_btn);
+
         guideTips = new ImageView[mImageIds.length];
         for (int i = 0; i < guideTips.length; i++) {
 
@@ -72,6 +59,7 @@ public class GuideActivity extends BaseActivity {
                 guideTips[i].setBackgroundResource(R.mipmap.guide_dot_normal);
             }
             guideGroup.addView(imageView);
+
         }
 
         mPager.setAdapter(new MyPagerAdapter());
@@ -102,20 +90,7 @@ public class GuideActivity extends BaseActivity {
 
             }
         });
-        mGuideLoginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(GuideActivity.this, LoginActivity.class));
-                GuideActivity.this.finish();
-            }
-        });
-        mGuideRegisterBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(GuideActivity.this, RegisterActivity.class).putExtra("fromGuide",true));
-                GuideActivity.this.finish();
-            }
-        });
+
     }
 
     // 左右滑动的图片适配器继承PagerAdapter
@@ -135,12 +110,31 @@ public class GuideActivity extends BaseActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            // TODO Auto-generated method stub
             LayoutInflater inflater = getLayoutInflater();
             View guideView = inflater.inflate(R.layout.item_guide, container, false);
             ImageView image = (ImageView) guideView
                     .findViewById(R.id.guide_item_image);
+            Button startBtn = (Button) guideView
+                    .findViewById(R.id.guide_start_btn);
+
             image.setBackgroundResource(mImageIds[position]);
+
+            if (position == mImageIds.length - 1) {
+                startBtn.setVisibility(View.VISIBLE);
+                guideGroup.setVisibility(View.GONE);
+                startBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(!fromabout) {
+                            startActivity(new Intent(GuideActivity.this, LoginActivity.class));
+                        }
+                        finish();
+                    }
+                });
+            } else {
+                startBtn.setVisibility(View.GONE);
+                guideGroup.setVisibility(View.VISIBLE);
+            }
 
             (container).addView(guideView, 0);
             return guideView;

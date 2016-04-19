@@ -57,7 +57,6 @@ public class RegisterActivity extends BaseActivity {
     private ImageButton mBackBtn;
     private TextView mBackTV;
     private TextView mTitleTV;
-    private boolean isFromGuide = false;
     private boolean isForgetPass = false;
 
     private LinearLayout mProtocolLayout = null;
@@ -127,16 +126,11 @@ public class RegisterActivity extends BaseActivity {
         mProtocolLayout = (LinearLayout) findViewById(R.id.register_protocol_checkbox_layout);
         mProtocolCB = (CheckBox) findViewById(R.id.register_protocol_checkbox);
 
-        isFromGuide = this.getIntent().getBooleanExtra("fromGuide", false);//从引导页过来
         isForgetPass = this.getIntent().getBooleanExtra("resetpass", false);//从引导页过来
 
-        if (isFromGuide) {
-            mBackBtn.setVisibility(View.GONE);
-            mBackTV.setVisibility(View.VISIBLE);
-        } else {
-            mBackBtn.setVisibility(View.VISIBLE);
-            mBackTV.setVisibility(View.GONE);
-        }
+        mBackBtn.setVisibility(View.VISIBLE);
+        mBackTV.setVisibility(View.GONE);
+
         if (isForgetPass) {
             mProtocolLayout.setVisibility(View.GONE);
             mRegBtn.setVisibility(View.GONE);
@@ -269,7 +263,7 @@ public class RegisterActivity extends BaseActivity {
                 } else if (!mProtocolCB.isCheck()) {
                     CommonUtils.showToast(RegisterActivity.this, "您还未同意用户协议");
                 } else {
-                    CommonUtils.showProgressDialog(RegisterActivity.this,"正在注册");
+                    CommonUtils.showProgressDialog(RegisterActivity.this, "正在注册");
                     // 先查询手机号是否已注册
                     BmobQuery<UserBean> bmobQuery = new BmobQuery<UserBean>();
                     //查询mobile叫mPhoneStr的数据
@@ -359,9 +353,6 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if (isFromGuide) {
-            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-        }
         finish();
 
     }

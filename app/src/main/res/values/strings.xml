@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">测试</string>
-    <string name="app_name1">音旅</string>
+    <string name="app_name">好旅</string>
     <string name="action_settings">关于</string>
     <string name="no_contacts_permission">应用无权限读取通讯录</string>
 </resources>

@@ -8,6 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY" />
-
+    <Button
+        android:id="@+id/guide_start_btn"
+        android:layout_width="@dimen/width_80_160"
+        android:layout_height="@dimen/height_10_160"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/height_10_160"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/login_other_btn_bg"
+        android:text="立即体验"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        />
 
 </RelativeLayout>
