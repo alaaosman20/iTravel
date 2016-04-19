@@ -1,6 +1,7 @@
 # 好旅（iTravel）
 > 项目简介：个人练习项目，主要功能是旅行随手记
-  
+  </br>
+  项目声明：该项目还处在开发阶段，不建议下载，项目中用到了很多网络大牛们的轮子，部分可能已经找不到出处，如果侵权，烦请告知删除。
   ![image](https://github.com/xmliu/iTravel/blob/master/raw/loading.gif)
   
   ![image](https://github.com/xmliu/iTravel/blob/master/raw/logo_icon.png)
