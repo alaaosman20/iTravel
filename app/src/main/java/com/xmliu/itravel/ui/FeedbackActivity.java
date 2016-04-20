@@ -3,11 +3,13 @@ package com.xmliu.itravel.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.bugtags.library.Bugtags;
+import com.bugtags.library.BugtagsCallback;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.rengwuxian.materialedittext.MaterialEditText;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.FeedbackBean;
 import com.xmliu.itravel.bean.ImageBean;
@@ -38,7 +40,8 @@ public class FeedbackActivity extends ToolbarActivity {
     private ImageView imageIV;
     private ImageView deleteIV;
     private ButtonRectangle submitBtn;
-    private MaterialEditText contentET;
+    private EditText contentET;
+    private EditText phoneET;
     private static final int REQUEST_CODE_ALBUM = 200;
     private static final int REQUEST_CODE_CAPTURE = 600;
     @Override
@@ -52,7 +55,8 @@ public class FeedbackActivity extends ToolbarActivity {
         imageIV = (ImageView) findViewById(R.id.id_feedback_display_iv);
         deleteIV = (ImageView) findViewById(R.id.id_feedback_delete_iv);
         submitBtn = (ButtonRectangle) findViewById(R.id.id_feedback_submit_btn);
-        contentET = (MaterialEditText) findViewById(R.id.id_feedback_content_et);
+        contentET = (EditText) findViewById(R.id.id_feedback_content_et);
+        phoneET = (EditText) findViewById(R.id.feedback_phone_et);
 
         addImageIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,10 +71,21 @@ public class FeedbackActivity extends ToolbarActivity {
             @Override
             public void onClick(View v) {
                 String content = contentET.getText().toString().trim();
+                String phone = phoneET.getText().toString().trim();
                 if (StringUtils.isBlank(content)) {
                     CommonUtils.showToast(FeedbackActivity.this, "反馈内容不能为空");
                 } else {
-                    onFeedBack(content);
+                    Bugtags.setUserData("name",phone);
+                    Bugtags.setUserData("image",newImgStr);
+                    Bugtags.sendFeedback(content);
+                    Bugtags.setAfterSendingCallback(new BugtagsCallback() {
+                        @Override
+                        public void run() {
+                            CommonUtils.showToast(FeedbackActivity.this, "反馈成功");
+                            finish();
+                        }
+                    });
+//                    onFeedBack(content);
                 }
             }
         });

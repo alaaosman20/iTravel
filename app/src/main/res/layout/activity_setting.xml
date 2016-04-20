@@ -1,35 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/weixin_bgcolor"
               android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/setting_feedback_shake"
+    <View
+        android:layout_marginTop="@dimen/height_5_160"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        />
+    <RelativeLayout
+        android:id="@+id/setting_feedback_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/theme_color"
-        android:paddingTop="@dimen/height_3_160"
-        android:paddingBottom="@dimen/height_3_160"
-        android:text="是否开启摇一摇发送反馈"
-        android:gravity="center"
-        android:textColor="@color/white"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="推送通知"
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="清除缓存"
-        android:textColor="@color/black"/>
+        android:background="@color/white"
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:gravity="center"
+            android:paddingBottom="@dimen/height_3_160"
+            android:paddingTop="@dimen/height_3_160"
+            android:text="是否开启摇一摇发送反馈"
+            android:textColor="@color/black"/>
+
+        <com.gc.materialdesign.views.Switch
+            android:id="@+id/setting_feedback_shake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/theme_color"
+            materialdesign:check="false"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        />
+
+    <RelativeLayout
+        android:id="@+id/setting_push_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="关于iTravel"
-        android:textColor="@color/black"/>
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:gravity="center"
+            android:paddingBottom="@dimen/height_3_160"
+            android:paddingTop="@dimen/height_3_160"
+            android:text="推送通知"
+            android:textColor="@color/black"/>
+
+        <com.gc.materialdesign.views.Switch
+            android:id="@+id/setting_push_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/theme_color"
+            materialdesign:check="false"
+            />
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        />
+
+    <RelativeLayout
+        android:id="@+id/setting_cache_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:gravity="center"
+            android:paddingBottom="@dimen/height_3_160"
+            android:paddingTop="@dimen/height_3_160"
+            android:text="清除缓存"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:text="12MB"
+            android:textColor="@color/gray"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        />
+
+    <RelativeLayout
+        android:id="@+id/setting_about_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/width_5_160"
+            android:gravity="center"
+            android:paddingBottom="@dimen/height_3_160"
+            android:paddingTop="@dimen/height_3_160"
+            android:text="关于iTravel"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:src="@mipmap/common_next"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        />
 
 </LinearLayout>
