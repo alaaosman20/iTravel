@@ -10,9 +10,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--checkbox、radiobutton eg. onfocus color -->
         <item name="colorAccent">@color/colorAccent</item>
-
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@android:color/white</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

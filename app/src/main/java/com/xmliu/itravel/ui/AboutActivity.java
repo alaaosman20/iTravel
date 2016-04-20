@@ -41,7 +41,6 @@ public class AboutActivity extends ToolbarActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         toolbar.setTitle("关于");
-
         versionLayout = (RelativeLayout) findViewById(R.id.aboutus_version_layout);
         marketLayout = (RelativeLayout) findViewById(R.id.aboutus_market_layout);
         feedbackLayout = (RelativeLayout) findViewById(R.id.aboutus_feedback_layout);

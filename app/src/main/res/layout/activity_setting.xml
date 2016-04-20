@@ -6,10 +6,15 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/setting_feedback_shake"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="是否开启摇一摇发送反"
-        android:textColor="@color/black"/>
+        android:background="@color/theme_color"
+        android:paddingTop="@dimen/height_3_160"
+        android:paddingBottom="@dimen/height_3_160"
+        android:text="是否开启摇一摇发送反馈"
+        android:gravity="center"
+        android:textColor="@color/white"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

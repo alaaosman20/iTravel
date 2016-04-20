@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppManager.getInstance().addActivity(this);
-
         mEditBtn = (ButtonFloat) findViewById(R.id.main_edit_buttonfloat);
         mRecyclerView = (RecyclerView) findViewById(R.id.aboutUs_recycleView);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_widget);

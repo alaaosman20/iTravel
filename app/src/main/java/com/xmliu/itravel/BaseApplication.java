@@ -11,12 +11,12 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.bugtags.library.Bugtags;
+import com.xmliu.itravel.utils.CrashExceptionHandler;
 import com.xmliu.itravel.utils.ImageUtils;
 import com.xmliu.itravel.utils.LogUtil;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import cn.bmob.v3.Bmob;
 import cn.smssdk.SMSSDK;
@@ -52,15 +52,15 @@ public class BaseApplication extends Application {
 //		JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
 //		JPushInterface.init(this);     		// 初始化 JPush  //030fe9f62bb
 
-//		String appId = "900004745"; // 上Bugly(bugly.qq.com)注册产品获取的AppId
-//		boolean isDebug = false; // true代表App处于调试阶段，false代表App发布阶段
-//		CrashReport.initCrashReport(this, appId, isDebug); // 初始化SDK
+		//在这里初始化 静默模式，只收集 Crash 信息（如果允许）
+		Bugtags.start("240e0e9796918ce6a1bc39439a999934", this, Bugtags.BTGInvocationEventNone);
+
 
 		SMSSDK.initSDK(this, "d900bcefc46f", "a05209f358fee5e09384e12439207df7");
 		Bmob.initialize(this, "07b752a64abdf34127887ada169d9709");
 
-//		Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(
-//				getApplicationContext()));
+		Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(
+				getApplicationContext()));
 	}
 
 	public static BaseApplication getInstance() {
