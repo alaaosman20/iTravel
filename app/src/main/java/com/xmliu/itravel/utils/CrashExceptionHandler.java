@@ -53,8 +53,8 @@ public class CrashExceptionHandler implements UncaughtExceptionHandler {
     }
 
     private void handleException(Throwable ex) {
-        sendCrashReport(ex); // 发送给bmob
-
+//        sendCrashReport(ex); // 发送给bmob
+        Bugtags.sendException(ex); // 发送给bugtags
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
