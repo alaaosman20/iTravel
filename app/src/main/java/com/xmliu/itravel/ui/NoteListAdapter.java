@@ -30,13 +30,13 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.NoteBean;
 import com.xmliu.itravel.bean.UserBean;
 import com.xmliu.itravel.utils.BaseRecyclerViewAdapter;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.DateUtils;
-import com.xmliu.itravel.utils.ImageUtils;
 import com.xmliu.itravel.utils.LogUtil;
 import com.xmliu.itravel.utils.RecyclerHolder;
 import com.xmliu.itravel.utils.StringUtils;
@@ -212,7 +212,7 @@ public class NoteListAdapter extends BaseRecyclerViewAdapter {
             nameTV.setText(item.getAuthor().getNickname());
         }
         if (!StringUtils.isBlank(item.getAuthor().getAvatar())) {
-            ImageUtils.displayImage(mContext,item.getAuthor().getAvatar(), avatarIV);
+            ImageLoader.getInstance().displayImage(item.getAuthor().getAvatar(), avatarIV);
         }
         addressLayout.setOnClickListener(new View.OnClickListener() {
             @Override

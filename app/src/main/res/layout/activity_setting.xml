@@ -75,41 +75,6 @@
             />
 
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        />
-
-    <RelativeLayout
-        android:id="@+id/setting_image_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/layout_selector"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/width_5_160"
-            android:gravity="center"
-            android:paddingBottom="@dimen/height_3_160"
-            android:paddingTop="@dimen/height_3_160"
-            android:text="仅Wifi加载图片"
-            android:textColor="@color/black"/>
-
-        <com.gc.materialdesign.views.Switch
-            android:id="@+id/setting_image_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@color/theme_color"
-            materialdesign:check="false"
-            />
-
-    </RelativeLayout>
-
 
     <View
         android:layout_width="match_parent"

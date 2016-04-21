@@ -15,20 +15,11 @@ import com.gc.materialdesign.views.Switch;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
-import com.xmliu.itravel.bean.SettingBean;
-import com.xmliu.itravel.bean.UserBean;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.FileUtils;
-import com.xmliu.itravel.utils.LogUtil;
 
 import java.io.File;
 import java.text.DecimalFormat;
-import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by xmliu on 2016/1/31.
@@ -38,11 +29,9 @@ public class SettingActivity extends ToolbarActivity {
     private RelativeLayout aboutLayout;
     private RelativeLayout pushLayout;
     private RelativeLayout cacheLayout;
-    private RelativeLayout imageLayout;
 
     private Switch shakeSwitch;
     private Switch pushSwitch;
-    private Switch imageSwitch;
     private TextView mCacheSizeTV;
     private String cacheSize;
     private File fileDir = new File(Constants.Path.ImageCacheDir);
@@ -59,10 +48,8 @@ public class SettingActivity extends ToolbarActivity {
         aboutLayout = (RelativeLayout) findViewById(R.id.setting_about_layout);
         pushLayout = (RelativeLayout) findViewById(R.id.setting_push_layout);
         cacheLayout = (RelativeLayout) findViewById(R.id.setting_cache_layout);
-        imageLayout = (RelativeLayout) findViewById(R.id.setting_image_layout);
         shakeSwitch = (Switch) findViewById(R.id.setting_feedback_shake);
         pushSwitch = (Switch) findViewById(R.id.setting_push_switch);
-        imageSwitch = (Switch) findViewById(R.id.setting_image_switch);
         mCacheSizeTV  = (TextView) findViewById(R.id.setting_cache_size);
 
         if(fileDir.exists()) {
@@ -83,8 +70,6 @@ public class SettingActivity extends ToolbarActivity {
         }else {
             shakeSwitch.setChecked(false);
         }
-
-        initImageSwitch();
 
         shakeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,33 +146,7 @@ public class SettingActivity extends ToolbarActivity {
                 CommonUtils.showToast(SettingActivity.this, "暂未开放");
             }
         });
-        imageLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                SettingBean settingBean = new SettingBean();
-                settingBean.setAuthor(BmobUser.getCurrentUser(SettingActivity.this, UserBean.class));
-                if (imageSwitch.isCheck()) {
-                    imageSwitch.setChecked(false);
-                    settingBean.setGprsImageEnable(true);
-                } else {
-                    imageSwitch.setChecked(true);
-                    settingBean.setGprsImageEnable(false);
-                }
-                settingBean.save(SettingActivity.this, new SaveListener() {
-                    @Override
-                    public void onSuccess() {
-                        LogUtil.i(TAG,"设置成功");
-                    }
-
-                    @Override
-                    public void onFailure(int i, String s) {
-                        LogUtil.i(TAG,"设置失败");
-                    }
-                });
-
-            }
-        });
         shakeSwitch.setOncheckListener(new Switch.OnCheckListener() {
             @Override
             public void onCheck(Switch view, boolean check) {
@@ -199,35 +158,6 @@ public class SettingActivity extends ToolbarActivity {
             }
         });
 
-    }
-
-    private void initImageSwitch(){
-        BmobQuery<SettingBean> bmobQuery = new BmobQuery<>();
-        UserBean userBean = BmobUser.getCurrentUser(SettingActivity.this,UserBean.class);
-        bmobQuery.addWhereEqualTo("author", userBean);
-        bmobQuery.findObjects(SettingActivity.this, new FindListener<SettingBean>() {
-            @Override
-            public void onSuccess(List<SettingBean> object) {
-                if (object.size() > 0) {
-                    LogUtil.i(TAG, "result" + object.get(0).isGprsImageEnable());
-                    boolean isGprsloadImage =  object.get(0).isGprsImageEnable();
-                    if(isGprsloadImage){
-                        imageSwitch.setChecked(false);
-                    }else{
-                        imageSwitch.setChecked(true);
-                    }
-
-                } else {
-                    LogUtil.i(TAG, "查询失败，数据为空");
-                }
-            }
-
-            @Override
-            public void onError(int code, String msg) {
-                LogUtil.i(TAG, "查询失败");
-
-            }
-        });
     }
 
 }

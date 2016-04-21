@@ -12,13 +12,8 @@ import android.widget.Toast;
 
 import com.bugtags.library.Bugtags;
 import com.xmliu.itravel.Constants;
-import com.xmliu.itravel.bean.CrashBean;
-import com.xmliu.itravel.bean.UserBean;
 
 import java.lang.Thread.UncaughtExceptionHandler;
-
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.SaveListener;
 
 /**
  * @date: 2015年6月16日 下午5:21:01
@@ -197,42 +192,14 @@ public class CrashExceptionHandler implements UncaughtExceptionHandler {
                 + screenSize);
 
         if (checkNetworkInfo()) {
-            onSubmitCrash(osVersion,
-                    phoneModel, token, appName, appVersionCode, "",
-                    exceptionReason, stackTrace, screenSize);
+//            onSubmitCrash(osVersion,
+//                    phoneModel, token, appName, appVersionCode, "",
+//                    exceptionReason, stackTrace, screenSize);
 
         }
 
     }
 
-    private void onSubmitCrash(String osVersion, String phoneModel,
-                               String token, String appName, String appVersionNo,
-                               String exceptionName, String exceptionReason,
-                               String stackTrace, String screenSize) {
-        CrashBean crashBean = new CrashBean();
-        crashBean.setAuthor(BmobUser.getCurrentUser(act, UserBean.class));
-        crashBean.setOsVersion(osVersion);
-        crashBean.setPhoneModel(phoneModel);
-        crashBean.setToken(token);
-        crashBean.setAppName(appName);
-        crashBean.setAppVersionNo(appVersionNo);
-        crashBean.setExceptionName(exceptionName);
-        crashBean.setExceptionReason(exceptionReason);
-        crashBean.setStackTrace(stackTrace);
-        crashBean.setScreenSize(screenSize);
-
-        crashBean.save(act, new SaveListener() {
-            @Override
-            public void onSuccess() {
-                LogUtil.d(TAG, "我们会尽快处理您提交的崩溃");
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                LogUtil.d(TAG, "提交失败:" + s);
-            }
-        });
-    }
 
     private boolean checkNetworkInfo() {
         ConnectivityManager cm = (ConnectivityManager) act
