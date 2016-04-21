@@ -78,7 +78,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.bugtags.library/bugtags-lib/1.2.4/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.afollestad.material-dialogs/core/0.8.5.3/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.frank-zhu/pullzoomview/1.0.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.rengwuxian.materialedittext/library/2.1.4/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.roughike/bottom-bar/1.2.9/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.wuxiaolong.pullloadmorerecyclerview/library/1.0.4/jars" />
@@ -135,7 +134,6 @@
     <orderEntry type="library" exported="" name="AMap_Location_v2.3.0_20160112" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Wechat-Favorite-2.6.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-SinaWeibo-2.6.6" level="project" />
-    <orderEntry type="library" exported="" name="pullzoomview-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Core-2.6.6" level="project" />
     <orderEntry type="module" module-name="MaterialDesign" exported="" />
   </component>

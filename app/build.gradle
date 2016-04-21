@@ -70,7 +70,6 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.google.code.gson:gson:2.4'
     compile 'de.hdodenhof:circleimageview:2.0.0'
-    compile 'com.github.frank-zhu:pullzoomview:1.0.0'
     compile 'com.github.chrisbanes.photoview:library:1.2.2'
     compile 'com.roughike:bottom-bar:1.2.9'
     compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.4'

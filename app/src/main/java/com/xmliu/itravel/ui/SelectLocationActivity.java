@@ -40,7 +40,6 @@ import com.xmliu.itravel.utils.BaseRecyclerViewAdapter;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.DividerItemDecoration;
 import com.xmliu.itravel.utils.LogUtil;
-import com.xmliu.itravel.utils.MyLayoutManager;
 import com.xmliu.itravel.utils.RecyclerHolder;
 import com.xmliu.itravel.utils.StringUtils;
 
@@ -95,8 +94,8 @@ public class SelectLocationActivity extends ToolbarActivity implements PoiSearch
 
     private void initRecyclerView() {
         // RecycleView初始化配置
-        MyLayoutManager layoutManager = new MyLayoutManager(this);
-        layoutManager.setOrientation(MyLayoutManager.VERTICAL);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         //设置Item增加、移除动画
         recyclerView.setItemAnimator(new DefaultItemAnimator());
