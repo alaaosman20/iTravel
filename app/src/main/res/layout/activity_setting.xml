@@ -101,6 +101,7 @@
             android:textColor="@color/black"/>
 
         <TextView
+            android:id="@+id/setting_cache_size"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/height_5_160"
             android:layout_alignParentRight="true"

@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.xmliu.itravel.BaseActivity;
-import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
 
 /**
@@ -22,55 +21,58 @@ import com.xmliu.itravel.R;
  */
 public class GuideActivity extends BaseActivity {
 
-    private int mImageIds[] = new int[]{R.mipmap.guide01,
+    private static final int mImageIds[] = {R.mipmap.guide01,
             R.mipmap.guide02, R.mipmap.guide03, R.mipmap.guide04};
     private ViewGroup guideGroup;
 
     private ImageView[] guideTips;
     private boolean fromabout = false;
+    private ViewPager mPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉信息栏
-        setContentView(R.layout.activity_guide);
-        fromabout = this.getIntent().getBooleanExtra("fromabout",false);
+
         init();
+        fromabout = this.getIntent().getBooleanExtra("fromabout",false);
         mApplication.mSharedPreferences.edit().putBoolean("isFirstTime", false)
                 .commit();
     }
 
     private void init() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉信息栏
+        setContentView(R.layout.activity_guide);
 
-        ViewPager mPager = (ViewPager) findViewById(R.id.guide_pager);
+        mPager = (ViewPager) findViewById(R.id.guide_pager);
         guideGroup = (ViewGroup) findViewById(R.id.guideGroup);
 
         guideTips = new ImageView[mImageIds.length];
         for (int i = 0; i < guideTips.length; i++) {
 
             ImageView imageView = new ImageView(this);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.rightMargin = Constants.Screen.width / 12;
-            imageView.setLayoutParams(params);
-
             guideTips[i] = imageView;
             if (i == 0) {
                 guideTips[i].setBackgroundResource(R.mipmap.guide_dot_press);
             } else {
                 guideTips[i].setBackgroundResource(R.mipmap.guide_dot_normal);
             }
-            guideGroup.addView(imageView);
+            int width = (int) getResources().getDimension(R.dimen.width_3_160);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(new ViewGroup.LayoutParams(
+                    width,width));
+            layoutParams.leftMargin = 15;
+            layoutParams.rightMargin = 15;
+            guideGroup.addView(imageView,layoutParams);
 
         }
 
         mPager.setAdapter(new MyPagerAdapter());
-        mPager.setCurrentItem(0, true);
+        mPager.setCurrentItem(0);
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int arg0) {
                 // TODO Auto-generated method stub
                 for (int i = 0; i < guideTips.length; i++) {
-                    if (i == arg0 % guideTips.length) {
+                    if (i == arg0 % mImageIds.length) {
                         guideTips[i].setBackgroundResource(R.mipmap.guide_dot_press);
                     } else {
                         guideTips[i].setBackgroundResource(R.mipmap.guide_dot_normal);
@@ -99,7 +101,7 @@ public class GuideActivity extends BaseActivity {
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             // TODO Auto-generated method stub
-            (container).removeView((View) object);
+            ((ViewPager)container).removeView((View) object);
         }
 
         @Override
@@ -111,13 +113,15 @@ public class GuideActivity extends BaseActivity {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             LayoutInflater inflater = getLayoutInflater();
-            View guideView = inflater.inflate(R.layout.item_guide, container, false);
+            View guideView = inflater.inflate(R.layout.item_guide, null);
             ImageView image = (ImageView) guideView
                     .findViewById(R.id.guide_item_image);
+            ImageView text = (ImageView) guideView
+                    .findViewById(R.id.guide_item_text);
             Button startBtn = (Button) guideView
                     .findViewById(R.id.guide_start_btn);
 
-            image.setBackgroundResource(mImageIds[position]);
+            image.setImageResource(mImageIds[position]);
 
             if (position == mImageIds.length - 1) {
                 startBtn.setVisibility(View.VISIBLE);
@@ -128,7 +132,7 @@ public class GuideActivity extends BaseActivity {
                         if(!fromabout) {
                             startActivity(new Intent(GuideActivity.this, LoginActivity.class));
                         }
-                        finish();
+                        GuideActivity.this.finish();
                     }
                 });
             } else {
@@ -136,7 +140,7 @@ public class GuideActivity extends BaseActivity {
                 guideGroup.setVisibility(View.VISIBLE);
             }
 
-            (container).addView(guideView, 0);
+            ((ViewPager) container).addView(guideView, 0);
             return guideView;
         }
 

@@ -9,9 +9,6 @@ package com.xmliu.itravel;
 
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
@@ -33,7 +30,6 @@ public abstract class BaseActivity extends Activity {
 	protected BaseApplication mApplication;
 	protected Handler mHandler;
 	protected String TAG;
-	protected Dialog mLoading_dlg;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,24 +40,6 @@ public abstract class BaseActivity extends Activity {
 		TAG=this.getLocalClassName();
 	}
 	    
-	/** 含有标题、内容、一个按钮的对话框 **/
-	protected AlertDialog showAlertDialog(String title, String message, String positiveText,
-			DialogInterface.OnClickListener onPositiveClickListener) {
-		AlertDialog alertDialog = new AlertDialog.Builder(this).setTitle(title).setMessage(message)
-				.setPositiveButton(positiveText, onPositiveClickListener).show();
-		return alertDialog;
-	}
-
-	/** 含有标题、内容、两个按钮的对话框 **/
-	protected AlertDialog showAlertDialog(String title, String message, String positiveText,
-			DialogInterface.OnClickListener onPositiveClickListener, String negativeText,
-			DialogInterface.OnClickListener onNegativeClickListener) {
-		AlertDialog alertDialog = new AlertDialog.Builder(this).setTitle(title).setMessage(message)
-				.setPositiveButton(positiveText, onPositiveClickListener)
-				.setNegativeButton(negativeText, onNegativeClickListener).show();
-		return alertDialog;
-	}
-
 	@Override
 	protected void onResume() {
 		super.onResume();

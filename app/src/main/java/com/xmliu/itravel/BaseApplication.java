@@ -16,8 +16,6 @@ import com.xmliu.itravel.utils.CrashExceptionHandler;
 import com.xmliu.itravel.utils.ImageUtils;
 import com.xmliu.itravel.utils.LogUtil;
 
-import java.io.File;
-
 import cn.bmob.v3.Bmob;
 import cn.smssdk.SMSSDK;
 
@@ -55,8 +53,8 @@ public class BaseApplication extends Application {
 		//在这里初始化 静默模式，只收集 Crash 信息（如果允许）
 		Bugtags.start("240e0e9796918ce6a1bc39439a999934", this, Bugtags.BTGInvocationEventNone);
 
-
 		SMSSDK.initSDK(this, "d900bcefc46f", "a05209f358fee5e09384e12439207df7");
+
 		Bmob.initialize(this, "07b752a64abdf34127887ada169d9709");
 
 		Thread.setDefaultUncaughtExceptionHandler(new CrashExceptionHandler(
@@ -67,16 +65,5 @@ public class BaseApplication extends Application {
 		return mInstance;
 	}
 
-	/**
-	 * 
-	 */
-	private void createFile(String path) {
-		File file = new File(path);
-		if (file.exists()) {
-			file.delete();
-		} else {
-			file.mkdirs();
-		}
-	}
 
 }
