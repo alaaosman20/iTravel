@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="@dimen/height_22_160"
         android:layout_height="@dimen/height_22_160"
-        android:layout_marginTop="@dimen/height_10_160"
+        android:layout_marginTop="@dimen/height_7_160"
         android:src="@mipmap/about_logo_icon"
         android:textColor="@color/black"/>
 
@@ -26,7 +26,7 @@
         android:id="@+id/aboutus_version_layout"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/height_11_160"
-        android:layout_marginTop="@dimen/height_10_160"
+        android:layout_marginTop="@dimen/height_7_160"
         android:background="@drawable/layout_selector"
         android:orientation="horizontal"
         >
@@ -64,7 +64,39 @@
             />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/aboutus_share_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_11_160"
+        android:background="@drawable/layout_selector"
+        android:orientation="horizontal"
+        >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/width_9_160"
+            android:gravity="center"
+            android:text="分享应用"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_5_160"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:src="@mipmap/common_next"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/width_8_160"
+            android:background="@color/grey"
+            />
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/aboutus_market_layout"
         android:layout_width="wrap_content"
@@ -94,19 +126,24 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="@dimen/width_8_160"
+
             android:background="@color/grey"
             />
     </RelativeLayout>
 
     <RelativeLayout
+        android:layout_marginTop="@dimen/height_3_160"
         android:id="@+id/aboutus_feedback_layout"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/height_11_160"
         android:background="@drawable/layout_selector"
         android:orientation="horizontal"
         >
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -124,23 +161,19 @@
             android:src="@mipmap/common_next"
             />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/grey"
-            />
+
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/aboutus_guide_layout"
-        android:layout_marginTop="@dimen/height_3_160"
+
         android:layout_width="wrap_content"
         android:layout_height="@dimen/height_11_160"
         android:background="@drawable/layout_selector"
         android:orientation="horizontal"
         >
         <View
+            android:layout_marginLeft="@dimen/width_8_160"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/grey"
@@ -207,7 +240,7 @@
         android:id="@+id/aboutus_protocol_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/height_18_160"
+        android:layout_marginTop="@dimen/height_10_160"
         android:text="用户协议"
         android:textColor="@color/blue"/>
 

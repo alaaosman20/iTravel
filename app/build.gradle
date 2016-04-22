@@ -74,6 +74,10 @@ dependencies {
     compile 'com.roughike:bottom-bar:1.2.9'
     compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.4'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile 'org.adw.library:discrete-seekbar:1.0.1'
+
+    compile 'com.github.rey5137:material:1.2.2'
+
     compile name: 'SMSSDK-2.0.1', ext: 'aar'
     compile project(':MaterialDesign')
     compile files('libs/BmobSDK_V3.a_bg.5_1111.jar')
@@ -88,7 +92,6 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-Favorite-2.6.6.jar')
     compile files('libs/ShareSDK-Wechat-Moments-2.6.6.jar')
     compile files('libs/AMap_2DMap_v2.6.0_20150916.jar')
-    compile files('libs/AMap_Location_v1.4.1_20150917.jar')
     compile files('libs/AMap_Search_v2.6.0_20150914.jar')
     compile files('libs/AMap_Location_v2.3.0_20160112.jar')
     compile files('libs/BmobPay_v2.6_160411.jar')

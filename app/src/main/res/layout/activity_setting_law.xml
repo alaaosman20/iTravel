@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <TextView
+        android:text="1、本应用的部分内容来自其他媒体转载，我们保证内容来源的可靠性、真实性和准确性，版权归出处所有。所有个人发布的作品，版权归个人所有。\n\n2、用户在发表状态的时候，请严格遵守相关法律法规，不得发表危害政府、社会、色情、暴力等内容，如果发现，本应用不承担任何责任，并会配合相关部门进行责任追究。"
+        android:textColor="@color/black"
+        android:layout_margin="@dimen/width_7_160"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

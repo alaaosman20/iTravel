@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="@dimen/width_10_160">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置字体大小"
+        android:textSize="18sp"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/height_3_160"
+        android:background="@color/gray"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_15_160"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/height_2_160"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文本样式："
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/setting_font_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="海贼王路飞"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+        android:layout_width="match_parent"
+        android:id="@+id/setting_font_seekbar"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/height_8_160"
+        app:dsb_max="30"
+        app:dsb_min="10"
+        app:dsb_indicatorTextAppearance="@color/white"
+        />
+
+    <Button
+        android:id="@+id/setting_font_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_10_160"
+        android:layout_marginTop="@dimen/height_2_160"
+        android:background="@drawable/login_other_btn_bg"
+        android:text="确定"
+        android:textColor="@color/white"/>
+</LinearLayout>

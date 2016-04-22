@@ -12,8 +12,8 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@color/theme_color" android:state_focused="true"/>
-    <item android:drawable="@color/theme_color" android:state_pressed="true"/>
+    <item android:drawable="@color/weixin_bgcolor" android:state_focused="true"/>
+    <item android:drawable="@color/weixin_bgcolor" android:state_pressed="true"/>
     <item android:drawable="@color/white"/>
 
 </selector>

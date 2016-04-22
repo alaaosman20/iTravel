@@ -45,7 +45,7 @@ public class BaseApplication extends Application {
 
 		LogUtil.setDebug(true); // true为调试模式，可在控制台看到日志；false为线上模式看不到日志
 
-		ImageUtils.initImageLoader(this,Constants.Path.ImageLoaderDir);
+		ImageUtils.initImageLoader(this, Constants.Path.ImageLoaderDir);
 
 //		JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
 //		JPushInterface.init(this);     		// 初始化 JPush  //030fe9f62bb

@@ -28,6 +28,7 @@ public class AboutActivity extends ToolbarActivity implements View.OnClickListen
     private RelativeLayout versionLayout;
     private RelativeLayout marketLayout;
     private RelativeLayout feedbackLayout;
+    private RelativeLayout shareLayout;
     private RelativeLayout guideLayout;
     private RelativeLayout meLayout;
     private TextView protocolTV;
@@ -44,6 +45,7 @@ public class AboutActivity extends ToolbarActivity implements View.OnClickListen
         versionLayout = (RelativeLayout) findViewById(R.id.aboutus_version_layout);
         marketLayout = (RelativeLayout) findViewById(R.id.aboutus_market_layout);
         feedbackLayout = (RelativeLayout) findViewById(R.id.aboutus_feedback_layout);
+        shareLayout = (RelativeLayout) findViewById(R.id.aboutus_share_layout);
         guideLayout = (RelativeLayout) findViewById(R.id.aboutus_guide_layout);
         meLayout = (RelativeLayout) findViewById(R.id.aboutus_me_layout);
         protocolTV = (TextView) findViewById(R.id.aboutus_protocol_tv);
@@ -57,6 +59,7 @@ public class AboutActivity extends ToolbarActivity implements View.OnClickListen
         marketLayout.setOnClickListener(this);
         feedbackLayout.setOnClickListener(this);
         guideLayout.setOnClickListener(this);
+        shareLayout.setOnClickListener(this);
         meLayout.setOnClickListener(this);
         protocolTV.setOnClickListener(this);
 
@@ -79,6 +82,9 @@ public class AboutActivity extends ToolbarActivity implements View.OnClickListen
                 break;
             case R.id.aboutus_guide_layout:
                 startActivity(new Intent(AboutActivity.this, GuideActivity.class).putExtra("fromabout",true));
+                break;
+            case R.id.aboutus_share_layout:
+
                 break;
             case R.id.aboutus_me_layout:
                 

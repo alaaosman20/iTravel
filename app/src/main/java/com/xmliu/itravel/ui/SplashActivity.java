@@ -115,6 +115,7 @@ public class SplashActivity extends BaseActivity {
                     }
                 } else {
                     CommonUtils.showToast(SplashActivity.this, "版本更新失败");
+                    afterVersionCheck();
                 }
 
             }
@@ -123,6 +124,7 @@ public class SplashActivity extends BaseActivity {
             public void onError(int code, String msg) {
                 // TODO Auto-generated method stub
                 CommonUtils.showToast(SplashActivity.this, "版本更新失败" + msg);
+                afterVersionCheck();
             }
         });
 
