@@ -92,6 +92,7 @@ public class NoteDetailActivity extends ToolbarActivity {
 
     private NoteDetailListAdapter adapter;
     private List<CommentBean> commentList = new ArrayList<>();
+
     private ShareBottomBar shareBottomBar = null;
 
     // 分享内容
