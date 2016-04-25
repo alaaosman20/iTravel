@@ -29,6 +29,18 @@
             android:text="是否开启摇一摇发送反馈"
             android:textColor="@color/black"/>
 
+        <com.rey.material.widget.Switch
+            android:id="@+id/setting_feedback_switch"
+            style="@style/Material.Widget.Switch"
+            android:gravity="center"
+            app:sw_trackColor="@color/setting_switch_color_selector"
+            app:sw_thumbColor ="@color/setting_switch_color_selector"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:layout_height="wrap_content"/>
 
     </RelativeLayout>
 
@@ -56,7 +68,18 @@
             android:text="推送通知"
             android:textColor="@color/black"/>
 
-
+        <com.rey.material.widget.Switch
+            android:id="@+id/setting_push_switch"
+            style="@style/Material.Widget.Switch"
+            android:gravity="center"
+            app:sw_trackColor="@color/setting_switch_color_selector"
+            app:sw_thumbColor ="@color/setting_switch_color_selector"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_7_160"
+            android:layout_height="wrap_content"/>
 
 
     </RelativeLayout>

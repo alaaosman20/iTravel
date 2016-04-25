@@ -14,6 +14,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bugtags.library.Bugtags;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rey.material.widget.Switch;
 import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.utils.CommonUtils;
@@ -35,8 +36,8 @@ public class SettingActivity extends ToolbarActivity {
     private RelativeLayout lawLayout;
     private RelativeLayout cacheLayout;
 
-//    private SlideSwitch shakeSwitch;
-//    private SlideSwitch pushSwitch;
+    private Switch shakeSwitch;
+    private Switch pushSwitch;
     private TextView mCacheSizeTV;
     private String cacheSize;
     private File fileDir = new File(Constants.Path.ImageCacheDir);
@@ -55,8 +56,8 @@ public class SettingActivity extends ToolbarActivity {
         fontLayout = (RelativeLayout) findViewById(R.id.setting_font_layout);
         lawLayout = (RelativeLayout) findViewById(R.id.setting_law_layout);
         cacheLayout = (RelativeLayout) findViewById(R.id.setting_cache_layout);
-//        shakeSwitch = (SlideSwitch) findViewById(R.id.setting_feedback_shake);
-//        pushSwitch = (SlideSwitch) findViewById(R.id.setting_push_switch);
+        shakeSwitch = (Switch) findViewById(R.id.setting_feedback_switch);
+        pushSwitch = (Switch) findViewById(R.id.setting_push_switch);
         mCacheSizeTV  = (TextView) findViewById(R.id.setting_cache_size);
 
         if(fileDir.exists()) {
@@ -73,19 +74,19 @@ public class SettingActivity extends ToolbarActivity {
 
 
         if(Bugtags.currentInvocationEvent() == Bugtags.BTGInvocationEventShake){
-//            shakeSwitch.setState(true);
+            shakeSwitch.setChecked(true);
         }else {
-//            shakeSwitch.setState(false);
+            shakeSwitch.setChecked(false);
         }
 
         shakeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(Bugtags.currentInvocationEvent() == Bugtags.BTGInvocationEventShake){
-//                    shakeSwitch.setState(false);
+                    shakeSwitch.setChecked(false);
                     Bugtags.setInvocationEvent(Bugtags.BTGInvocationEventNone); //静默模式，只收集 Crash 信息（如果允许）
                 }else {
-//                    shakeSwitch.setState(true);
+                    shakeSwitch.setChecked(true);
                     Bugtags.setInvocationEvent(Bugtags.BTGInvocationEventShake); // 通过摇一摇呼出 Bugtags
                 }
             }
@@ -181,22 +182,24 @@ public class SettingActivity extends ToolbarActivity {
         pushLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (pushSwitch.isChecked()) {
+                    pushSwitch.setChecked(false);
+                } else {
+                    pushSwitch.setChecked(true);
+                }
             }
         });
 
-//        shakeSwitch.setSlideListener(new SlideSwitch.SlideListener() {
-//            @Override
-//            public void open() {
-//                Bugtags.setInvocationEvent(Bugtags.BTGInvocationEventShake); // 通过摇一摇呼出 Bugtags
-//            }
-//
-//            @Override
-//            public void close() {
-//                Bugtags.setInvocationEvent(Bugtags.BTGInvocationEventNone); //静默模式，只收集 Crash 信息（如果允许）
-//            }
-//        });
-
+        shakeSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(Switch view, boolean checked) {
+                if (checked) {
+                    Bugtags.setInvocationEvent(Bugtags.BTGInvocationEventShake); // 通过摇一摇呼出 Bugtags
+                } else {
+                    Bugtags.setInvocationEvent(Bugtags.BTGInvocationEventNone); //静默模式，只收集 Crash 信息（如果允许）
+                }
+            }
+        });
 
     }
 
