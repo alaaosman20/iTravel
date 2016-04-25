@@ -15,7 +15,7 @@
         android:layout_height="@dimen/height_5_160"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="@dimen/height_10_160"
+        android:layout_marginBottom="@dimen/height_5_160"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
     </LinearLayout>

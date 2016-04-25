@@ -11,28 +11,31 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/blackfour"
-    android:gravity="center_vertical"
-    android:orientation="horizontal" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/popup_note_options_bg"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingBottom="@dimen/height_1_160"
+              android:paddingTop="@dimen/height_1_160">
 
     <Button
         android:id="@+id/select_photo_mode_from_album_btn"
         android:layout_width="wrap_content"
-        android:layout_weight="1"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@color/transparent"
         android:gravity="center"
         android:text="举报"
         android:textColor="@color/white"
-        android:textSize="14sp"
-         />
+        android:textSize="12sp"
+        />
+
     <View
         android:layout_width="1px"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/height_2_160"
-        android:layout_marginBottom="@dimen/height_2_160"
+        android:paddingTop="@dimen/height_3_160"
+        android:paddingBottom="@dimen/height_3_160"
         android:background="@color/whitefour"/>
 
     <Button
@@ -44,26 +47,27 @@
         android:gravity="center"
         android:text="删除"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="12sp"
         />
+
     <View
         android:layout_width="1px"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/height_2_160"
-        android:layout_marginBottom="@dimen/height_2_160"
+        android:paddingBottom="@dimen/height_3_160"
+        android:paddingTop="@dimen/height_3_160"
         android:background="@color/whitefour"/>
-    
+
 
     <Button
         android:id="@+id/select_photo_mode_cancel_btn"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@color/transparent"
         android:gravity="center"
-        android:text="取消"
-        android:layout_weight="1"
+        android:text="收藏"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="12sp"
         />
 
 </LinearLayout>

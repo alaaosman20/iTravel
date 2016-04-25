@@ -125,7 +125,6 @@ public class GuideActivity extends BaseActivity {
 
             if (position == mImageIds.length - 1) {
                 startBtn.setVisibility(View.VISIBLE);
-                guideGroup.setVisibility(View.GONE);
                 startBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -137,7 +136,6 @@ public class GuideActivity extends BaseActivity {
                 });
             } else {
                 startBtn.setVisibility(View.GONE);
-                guideGroup.setVisibility(View.VISIBLE);
             }
 
             ((ViewPager) container).addView(guideView, 0);
