@@ -40,16 +40,20 @@
             android:text="海贼王路飞"
             android:textColor="@color/black"/>
     </LinearLayout>
-
-    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+    <com.rey.material.widget.Slider
+        style="@style/Material.Widget.Slider"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/height_20_160"
         android:id="@+id/setting_font_seekbar"
-        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/height_8_160"
-        app:dsb_max="30"
-        app:dsb_min="10"
-        app:dsb_indicatorTextAppearance="@color/white"
+        android:gravity="center"
+        app:sl_minValue="10"
+        app:sl_maxValue="30"
+        app:sl_value="14"
+        app:sl_discreteMode="true"
+        app:sl_primaryColor ="@color/colorPrimary"
         />
+
 
     <Button
         android:id="@+id/setting_font_submit"

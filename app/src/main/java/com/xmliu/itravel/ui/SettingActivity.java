@@ -14,13 +14,12 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bugtags.library.Bugtags;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rey.material.widget.Slider;
 import com.rey.material.widget.Switch;
 import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.FileUtils;
-
-import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -97,28 +96,25 @@ public class SettingActivity extends ToolbarActivity {
                 View view = LayoutInflater.from(SettingActivity.this).inflate(R.layout.dialog_setting_font,null);
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(SettingActivity.this)
                         .customView(view, false);
-                DiscreteSeekBar seekBar = (DiscreteSeekBar) view.findViewById(R.id.setting_font_seekbar);
+                Slider seekBar = (Slider) view.findViewById(R.id.setting_font_seekbar);
                 final TextView textView = (TextView) view.findViewById(R.id.setting_font_text);
                 Button submitBtn = (Button) view.findViewById(R.id.setting_font_submit);
-                seekBar.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
+                seekBar.setOnPositionChangeListener(new Slider.OnPositionChangeListener() {
                     @Override
-                    public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
-                        textView.setTextSize(value);
-                    }
-
-                    @Override
-                    public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
-
-                    }
-
-                    @Override
-                    public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
-
+                    public void onPositionChanged(Slider view, boolean fromUser, float oldPos, float newPos, int oldValue, int newValue) {
+                        textView.setTextSize(newValue);
                     }
                 });
 
                 MaterialDialog dialog = builder.build();
                 dialog.show();
+                submitBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // 保存字体设置到服务器
+
+                    }
+                });
             }
         });
         lawLayout.setOnClickListener(new View.OnClickListener() {
