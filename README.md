@@ -16,9 +16,9 @@
  ``` java
  public static final String appTitle = "好旅"
  ``` 
-> 项目声明：该项目还处在开发阶段，不建议下载，项目中用到了很多网络大牛们的轮子，部分可能已经找不到出处，如果侵权，烦请告知删除。
+> 项目声明：该项目还处在开发阶段，不建议下载，项目中用到了很多网络大牛们的轮子，部分可能已经找不到出处，如果侵权，烦请告知删除。</br>
 
 
 **关于我：**</br>
- - csdn:<blog.csdn.net/diyangxia>
- - mail:diyangxia@163.com
+ - csdn: <http://blog.csdn.net/diyangxia>
+ - mail: diyangxia@163.com
