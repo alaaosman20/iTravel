@@ -11,7 +11,7 @@
 
 
 <scale xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="300"
+    android:duration="150"
     android:fromXScale="0.0"
     android:fromYScale="1.0"
     android:pivotX="100%"

@@ -23,11 +23,10 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.google.gson.Gson;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rey.material.app.SimpleDialog;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.NoteBean;
 import com.xmliu.itravel.bean.UserBean;
@@ -639,26 +638,22 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(this)
-                .title("应用提示")
-                .content("确定退出" + getResources().getString(R.string.app_name) + "吗?")
-                .positiveText("确定").onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(MaterialDialog dialog, DialogAction which) {
-                        dialog.dismiss();
-                        AppManager.getInstance().killAllActivity();
-                    }
-                })
-                .negativeText("取消")
-                .onNegative(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(MaterialDialog dialog, DialogAction which) {
-                        dialog.dismiss();
-                    }
-                });
 
-        MaterialDialog dialog = builder.build();
-        dialog.show();
+        final SimpleDialog simpleDialog = (SimpleDialog) new SimpleDialog.Builder(R.style.SimpleDialog).build(MainActivity.this);
+        simpleDialog.message("确定退出" + getResources().getString(R.string.app_name) + "吗?") .title("应用提示")
+                .positiveAction("确定").negativeAction("取消").positiveActionClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                simpleDialog.dismiss();
+                AppManager.getInstance().AppExit(MainActivity.this);
+            }
+        }).negativeActionClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                simpleDialog.dismiss();
+            }
+        }).show();
+
 
     }
 

@@ -10,9 +10,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--checkbox、radiobutton eg. onfocus color -->
         <item name="colorAccent">@color/colorAccent</item>
+        <!--toolbar文字的颜色-->
+        <item name="@android:textColorPrimary">@android:color/white</item>
         <!-- 窗口的背景颜色 -->
         <item name="android:windowBackground">@android:color/white</item>
-        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <!--toolbar上菜单文字的颜色-->
+        <item name="actionMenuTextColor">@android:color/white</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -44,5 +47,9 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:backgroundDimAmount">0</item>
+    </style>
+    <style name="SimpleDialog" parent="Material.App.Dialog.Simple.Light">
+        <item name="di_inAnimation">@anim/scale_in</item>
+        <item name="di_outAnimation">@anim/scale_out</item>
     </style>
 </resources>
