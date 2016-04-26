@@ -6,13 +6,9 @@
               android:background="@color/weixin_bgcolor"
               android:orientation="vertical">
 
-    <View
-        android:layout_marginTop="@dimen/height_5_160"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        />
+
     <RelativeLayout
+        android:layout_marginTop="@dimen/height_5_160"
         android:id="@+id/setting_feedback_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +43,7 @@
     <View
         android:layout_marginLeft="@dimen/width_5_160"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:background="@color/grey"
         />
 
@@ -84,21 +80,12 @@
 
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        />
 
 
-    <View
-        android:layout_marginTop="@dimen/height_3_160"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        />
+
 
     <RelativeLayout
+        android:layout_marginTop="@dimen/height_3_160"
         android:id="@+id/setting_cache_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -118,19 +105,19 @@
         <TextView
             android:id="@+id/setting_cache_size"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/height_5_160"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/width_7_160"
             android:text="12MB"
-            android:textColor="@color/gray"
+            android:textColor="@color/grey"
             />
 
     </RelativeLayout>
     <View
         android:layout_marginLeft="@dimen/width_5_160"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:background="@color/grey"
         />
 
@@ -184,29 +171,19 @@
         <TextView
             android:id="@+id/setting_font_size"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/height_5_160"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/width_7_160"
             android:text="14号字体"
-            android:textColor="@color/gray"
+            android:textColor="@color/grey"
             />
 
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        />
 
-    <View
-        android:layout_marginTop="@dimen/height_3_160"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        />
 
     <RelativeLayout
+        android:layout_marginTop="@dimen/height_3_160"
         android:id="@+id/setting_law_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -236,7 +213,7 @@
     <View
         android:layout_marginLeft="@dimen/width_5_160"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:background="@color/grey"
         />
 
@@ -268,10 +245,6 @@
 
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey"
-        />
+
 
 </LinearLayout>

@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/height_2_160"
         android:text="@string/app_name"
-        android:textColor="@color/gray"
+        android:textColor="@color/grey"
         android:textSize="14sp"/>
 
     <RelativeLayout
@@ -31,11 +31,7 @@
         android:orientation="horizontal"
         >
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,12 +48,12 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/width_7_160"
-            android:textColor="@color/gray"
+            android:textColor="@color/grey"
             />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="@dimen/width_8_160"
             android:background="@color/grey"
@@ -91,7 +87,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="@dimen/width_8_160"
             android:background="@color/grey"
@@ -122,13 +118,7 @@
             android:src="@mipmap/common_next"
             />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentBottom="true"
 
-            android:background="@color/grey"
-            />
     </RelativeLayout>
 
     <RelativeLayout
@@ -139,11 +129,7 @@
         android:background="@drawable/layout_selector"
         android:orientation="horizontal"
         >
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -175,7 +161,7 @@
         <View
             android:layout_marginLeft="@dimen/width_8_160"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
             android:background="@color/grey"
             />
         <TextView
@@ -197,7 +183,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="@dimen/width_8_160"
             android:background="@color/grey"
@@ -228,12 +214,7 @@
             android:src="@mipmap/common_next"
             />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/grey"
-            />
+
     </RelativeLayout>
 
     <TextView
@@ -241,14 +222,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/height_10_160"
-        android:text="用户协议"
+        android:text="《用户协议》"
         android:textColor="@color/blue"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/height_2_160"
-        android:text="©2011 - 2016 itravel.com All rights reserved"
-        android:textColor="@color/black"/>
+        android:text="©2011 - 2016 xmtravel.com All rights reserved"
+        android:textColor="@color/grey"/>
 
 </LinearLayout>

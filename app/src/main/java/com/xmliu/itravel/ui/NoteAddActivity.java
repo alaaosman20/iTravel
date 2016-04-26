@@ -41,7 +41,7 @@ import cn.bmob.v3.listener.UploadFileListener;
 /**
  * Created by xmliu on 2016/1/24.
  */
-public class AddActivity extends ToolbarActivity {
+public class NoteAddActivity extends ToolbarActivity {
 
     private static final int REQUEST_CODE_ALBUM = 200;
     private static final int REQUEST_CODE_CAPTURE = 600;
@@ -90,7 +90,7 @@ public class AddActivity extends ToolbarActivity {
         addressLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult(new Intent(AddActivity.this,SelectLocationActivity.class),REQUEST_CODE_LOCATION);
+                startActivityForResult(new Intent(NoteAddActivity.this,SelectLocationActivity.class),REQUEST_CODE_LOCATION);
             }
         });
 
@@ -101,16 +101,16 @@ public class AddActivity extends ToolbarActivity {
                 String address = addressTV.getText().toString().trim();
                 boolean isopen = mPermissionCB.isChecked();
                 if (StringUtils.isBlank(content)) {
-                    CommonUtils.showToast(AddActivity.this, "内容不能为空");
+                    CommonUtils.showToast(NoteAddActivity.this, "内容不能为空");
                 } else {
-                    CommonUtils.showProgressDialog(AddActivity.this);
+                    CommonUtils.showProgressDialog(NoteAddActivity.this);
                     onAddNote(content, address, isopen);
                 }
             }
         });
 
         // RecycleView初始化配置
-        gridRecycleview.setLayoutManager(new GridLayoutManager(AddActivity.this, 3));
+        gridRecycleview.setLayoutManager(new GridLayoutManager(NoteAddActivity.this, 3));
         //设置Item增加、移除动画
         gridRecycleview.setItemAnimator(new DefaultItemAnimator());
 
@@ -119,7 +119,7 @@ public class AddActivity extends ToolbarActivity {
             bean.setId("" + System.currentTimeMillis());
             mListData.add(bean);
         }
-        addAdapter = new AddImageAdapter(AddActivity.this, mListData);
+        addAdapter = new AddImageAdapter(NoteAddActivity.this, mListData);
         gridRecycleview.setAdapter(addAdapter);
         addAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -163,18 +163,19 @@ public class AddActivity extends ToolbarActivity {
             addIV.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivityForResult(
-                            new Intent(AddActivity.this, SelectPhotoActivity.class).putExtra("num", 1),
-                            REQUEST_CODE_ALBUM);
+                    if(list.size() > 6){
+                        CommonUtils.showToast(NoteAddActivity.this,"最多添加6张");
+                    }else {
+                        startActivityForResult(
+                                new Intent(NoteAddActivity.this, SelectPhotoActivity.class).putExtra("num", 1),
+                                REQUEST_CODE_ALBUM);
+                    }
                 }
             });
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     list.remove(pos);
-                    if(list.size() == 8){
-
-                    }
                     notifyDataSetChanged();
                 }
             });
@@ -194,11 +195,11 @@ public class AddActivity extends ToolbarActivity {
         noteBean.setCommentNum(0);
         mListData.remove(mListData.size() - 1);
         noteBean.setImageList(mListData);
-        noteBean.save(AddActivity.this, new SaveListener() {
+        noteBean.save(NoteAddActivity.this, new SaveListener() {
             @Override
             public void onSuccess() {
                 CommonUtils.hideProgressDialog();
-                CommonUtils.showToast(AddActivity.this, "发表成功");
+                CommonUtils.showToast(NoteAddActivity.this, "发表成功");
                 setResult(RESULT_OK);
                 finish();
 
@@ -207,28 +208,28 @@ public class AddActivity extends ToolbarActivity {
             @Override
             public void onFailure(int i, String s) {
                 CommonUtils.hideProgressDialog();
-                CommonUtils.showToast(AddActivity.this, "提交失败");
+                CommonUtils.showToast(NoteAddActivity.this, "提交失败");
 
             }
         });
     }
 
     private void uploadImage(String mImagePath) {
-        CommonUtils.showProgressDialog(AddActivity.this, "正在上传图片...");
+        CommonUtils.showProgressDialog(NoteAddActivity.this, "正在上传图片...");
         final File file = new File(mImagePath);
         final BmobFile imageFile = new BmobFile(file);
         imageFile.uploadblock(this, new UploadFileListener() {
             @Override
             public void onSuccess() {
-                LogUtil.i(TAG, "图片上传成功，地址：" + imageFile.getFileUrl(AddActivity.this));
-                newImgStr = imageFile.getFileUrl(AddActivity.this);
+                LogUtil.i(TAG, "图片上传成功，地址：" + imageFile.getFileUrl(NoteAddActivity.this));
+                newImgStr = imageFile.getFileUrl(NoteAddActivity.this);
                 insertObject(new ImageBean(imageFile.getUrl(), System.currentTimeMillis() + "", imageFile));
             }
 
             @Override
             public void onFailure(int i, String s) {
                 CommonUtils.hideProgressDialog();
-                CommonUtils.showToast(AddActivity.this, "图片上传失败");
+                CommonUtils.showToast(NoteAddActivity.this, "图片上传失败");
                 LogUtil.i(TAG, i + "图片上传失败" + s);
 
             }

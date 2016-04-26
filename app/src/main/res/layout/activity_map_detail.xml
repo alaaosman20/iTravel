@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/height_2_160"
-        android:textColor="@color/gray"
+        android:textColor="@color/grey"
         android:textSize="12sp"/>
 
     <LinearLayout
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="位置"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:textSize="14sp"/>
 
             <TextView
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="图集"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:textSize="14sp"/>
 
             <TextView

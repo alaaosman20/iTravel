@@ -33,7 +33,10 @@ import org.json.JSONObject;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobSMS;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.RequestSMSCodeListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.smssdk.EventHandler;
@@ -86,7 +89,7 @@ public class RegisterActivity extends BaseActivity {
                         } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                             time.start();// 开始倒计时
                             CommonUtils.showToast(RegisterActivity.this, "验证码已经发送");
-                            mPhoneET.setTextColor(getResources().getColor(R.color.gray));
+                            mPhoneET.setTextColor(getResources().getColor(R.color.grey));
                             mPhoneET.setEnabled(false);
                         }
                         break;
@@ -161,7 +164,7 @@ public class RegisterActivity extends BaseActivity {
             public void onClick(View v) {
                 if (mProtocolCB.isChecked()) {
                     mProtocolCB.setChecked(false);
-                    mProtocolTV.setTextColor(ContextCompat.getColor(RegisterActivity.this, R.color.gray));
+                    mProtocolTV.setTextColor(ContextCompat.getColor(RegisterActivity.this, R.color.grey));
                 } else {
                     mProtocolCB.setChecked(true);
                     mProtocolTV.setTextColor(ContextCompat.getColor(RegisterActivity.this, R.color.theme_color));
@@ -184,6 +187,16 @@ public class RegisterActivity extends BaseActivity {
         mSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                BmobSMS.requestSMSCode(RegisterActivity.this, "15250480155", "海贼之路", new RequestSMSCodeListener() {
+//
+//                    @Override
+//                    public void done(Integer smsId, BmobException ex) {
+//                        // TODO Auto-generated method stub
+//                        if (ex == null) {//验证码发送成功
+//                            LogUtil.i("TAG", "短信id：" + smsId);//用于查询本次短信发送详情
+//                        }
+//                    }
+//                });
                 final String mPhoneStr = mPhoneET.getText().toString().trim()
                         .replaceAll(" ", "");
                 if (StringUtils.isBlank(mPhoneStr)) {
@@ -208,6 +221,7 @@ public class RegisterActivity extends BaseActivity {
                                 mSendBtn.setText("获取中...");
                                 mSendBtn.setEnabled(false);
                                 SMSSDK.getVerificationCode("86", mPhoneET.getText().toString().trim().replaceAll(" ", ""));
+
                             }
 
                         }

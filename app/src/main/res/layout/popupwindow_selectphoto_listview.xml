@@ -13,7 +13,7 @@
         android:listSelector="@null"
         android:scrollbars="none"
         android:dividerHeight="1dp"
-        android:divider="@color/common_tab_bg_light_gray"
+        android:divider="@color/common_tab_bg_light_grey"
         android:transcriptMode="normal" />
 
 </LinearLayout>

@@ -8,7 +8,7 @@
     <!--竹绿色-->
     <color name="theme_color2">#71A93A</color>
 
-    <color name="common_tab_bg_light_gray">#D9DCE1</color>
+    <color name="common_tab_bg_light_grey">#D9DCE1</color>
 
     <color name="light_black">#EE000000</color>
     <!-- 选择图片对话框背景颜色 -->
@@ -72,7 +72,7 @@
     <color name="gold">#ffd700</color>
     <!-- 金色 -->
     <!-- 半透明灰色 -->
-    <color name="halfgray">#7f323232</color>
+    <color name="halfgrey">#7f323232</color>
     <color name="pink">#ffc0cb</color>
     <!-- 粉红色 -->
     <color name="lightpink">#ffb6c1</color>
@@ -178,8 +178,6 @@
     <!-- 亮天蓝色 -->
     <color name="skyblue">#87ceeb</color>
     <!-- 天蓝色 -->
-    <color name="gray">#808080</color>
-    <!-- 灰色 -->
     <color name="grey">#808080</color>
     <!-- 灰色 -->
     <color name="olive">#808000</color>

@@ -333,7 +333,7 @@ public class SelectPhotoActivity extends ToolbarActivity {
                 holder.select.setVisibility(View.GONE);
                 holder.photo.setScaleType(ScaleType.CENTER_INSIDE);
                 holder.photo.setImageResource(R.mipmap.camera);
-                holder.photo.setBackgroundColor(ContextCompat.getColor(SelectPhotoActivity.this, R.color.gray));
+                holder.photo.setBackgroundColor(ContextCompat.getColor(SelectPhotoActivity.this, R.color.grey));
             } else {
                 holder.photo.setBackgroundColor(ContextCompat.getColor(SelectPhotoActivity.this, R.color.transparent));
                 holder.photo.setScaleType(ScaleType.CENTER_CROP);

@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/width_2_160"
                         android:text="14:34"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/grey"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -87,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/width_2_160"
                         android:text="赞"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/grey"
                         android:textSize="@dimen/micro_font_size" />
                 </LinearLayout>
 

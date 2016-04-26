@@ -1,8 +1,14 @@
 package com.xmliu.itravel.ui;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +19,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.ImageBean;
 import com.xmliu.itravel.bean.UserBean;
@@ -25,6 +32,10 @@ import com.xmliu.itravel.mvp.UserView;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.LogUtil;
 import com.xmliu.itravel.utils.StringUtils;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobUser;
@@ -60,12 +71,15 @@ public class UserInfoEditActivity extends ToolbarActivity implements UserView,Up
 
     private static final int REQUEST_CODE_ALBUM = 200;
     private static final int REQUEST_CODE_CAPTURE = 600;
+    private static final int REQUEST_CODE_CROP = 400;
 
     private int fromWhere = 0; // 1 头像； 2 背景
     private String newImgStr;
 
     private UserPresenter userPresenter;
     private ImagePresenter imagePresenter;
+
+    private String mImagePath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -241,17 +255,114 @@ public class UserInfoEditActivity extends ToolbarActivity implements UserView,Up
         if (requestCode == REQUEST_CODE_ALBUM && data!= null && resultCode == RESULT_OK) {
             // 相册返回
             LogUtil.e(TAG, "REQUEST_CODE_ALBUM HAS BEEN CALLED");
-            imagePresenter.uploadImage(data.getStringExtra("imagePath"));
+            startActionCrop(Uri.fromFile(new File(data.getStringExtra("imagePath"))));
         }
         if (resultCode == REQUEST_CODE_CAPTURE) {
             // 拍照返回
             LogUtil.e(TAG, "REQUEST_CODE_CAPTURE HAS BEEN CALLED");
             Bundle b = data.getExtras(); // data为B中回传的Intent
-            imagePresenter.uploadImage(b.getString("cameraPath"));// str即为回传的值
+            startActionCrop(Uri.fromFile(new File(b.getString("cameraPath"))));
+        }
+        if (requestCode == REQUEST_CODE_CROP && resultCode == RESULT_OK) {
+            Log.i("TAG", "REQUEST_CODE_CROP return=>" + mImagePath);
+            imagePresenter.uploadImage(mImagePath);
         }
     }
 
+    private void startActionCrop(Uri data) {
+        Intent intent = new Intent("com.android.camera.action.CROP");
+        intent.setDataAndType(data, "image/*");
+        intent.putExtra("output", getCropTempUri(data));
+        intent.putExtra("crop", "true");
+        intent.putExtra("aspectX", 1);// 裁剪框比例
+        intent.putExtra("aspectY", 1);
+        intent.putExtra("outputX", 300);// 输出图片大小
+        intent.putExtra("outputY", 300);
+        intent.putExtra("scale", true);// 去黑边
+        intent.putExtra("scaleUpIfNeeded", true);// 去黑边
+        startActivityForResult(intent, REQUEST_CODE_CROP);
+    }
+    private Uri getCropTempUri(Uri uri) {
+        File protraitFile;
+        String storageState = Environment.getExternalStorageState();
+        if (storageState.equals(Environment.MEDIA_MOUNTED)) {
+            File savedir = null;
+            savedir = new File(Constants.Path.ImageCrop);
+            if (!savedir.exists()) {
+                savedir.mkdirs();
+            }
+        } else {
+            CommonUtils.showToast(UserInfoEditActivity.this,
+                    "无法保存上传的图片，请检查SD卡是否挂载");
+            return null;
+        }
+        String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss")
+                .format(new Date());
+        String thePath = getAbsolutePathFromNoStandardUri(uri);
 
+        if (StringUtils.isEmpty(thePath)) {
+            thePath = getAbsoluteImagePath(UserInfoEditActivity.this, uri);
+        }
+
+        String ext = getFileFormat(thePath);
+        ext = StringUtils.isEmpty(ext) ? "jpg" : ext;
+
+        String cropFileName = "crop_bg_" + timeStamp + "." + ext;
+        mImagePath = Constants.Path.ImageCrop + cropFileName;
+        protraitFile = new File(mImagePath);
+
+        return Uri.fromFile(protraitFile);
+    }
+    private String getFileFormat(String fileName) {
+        if (StringUtils.isEmpty(fileName))
+            return "";
+
+        int point = fileName.lastIndexOf('.');
+        return fileName.substring(point + 1);
+    }
+
+    private String getAbsoluteImagePath(Activity context, Uri uri) {
+        String imagePath = "";
+        String[] proj = { MediaStore.Images.Media.DATA };
+
+        if (null == uri) {
+            System.out.println("uri is null");
+        }
+
+        if (null == context) {
+            System.out.println("context is null");
+        }
+
+        Cursor cursor = context.managedQuery(uri, proj, null, null, null);
+
+        if (cursor != null) {
+            int column_index = cursor
+                    .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            if (cursor.getCount() > 0 && cursor.moveToFirst()) {
+                imagePath = cursor.getString(column_index);
+            }
+        }
+        return imagePath;
+    }
+
+    private String getAbsolutePathFromNoStandardUri(Uri mUri) {
+        String filePath = null;
+
+        String mUriString = mUri.toString();
+        mUriString = Uri.decode(mUriString);
+
+        String pre1 = "file://" + "/sdcard" + File.separator;
+        String pre2 = "file://" + "/mnt/sdcard" + File.separator;
+
+        if (mUriString.startsWith(pre1)) {
+            filePath = Environment.getExternalStorageDirectory().getPath()
+                    + File.separator + mUriString.substring(pre1.length());
+        } else if (mUriString.startsWith(pre2)) {
+            filePath = Environment.getExternalStorageDirectory().getPath()
+                    + File.separator + mUriString.substring(pre2.length());
+        }
+        return filePath;
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -33,7 +33,6 @@ public class UserCenterActivity extends ToolbarActivity {
     private String userbgUrl;
     private String userId;
     private int genderValue;
-    private TextView feedlistTV;
     private Button logoutTV;
     private TextView nicknameTV;
     private TextView signatureTV;
@@ -56,7 +55,6 @@ public class UserCenterActivity extends ToolbarActivity {
         userId = this.getIntent().getStringExtra("userId");
         genderValue = this.getIntent().getIntExtra("gender", -1);
 
-        feedlistTV = (TextView) findViewById(R.id.id_user_center_feedback_tv);
         logoutTV = (Button) findViewById(R.id.id_user_center_logout_tv);
         nicknameTV = (TextView) findViewById(R.id.user_center_nickname_tv);
         signatureTV = (TextView) findViewById(R.id.user_center_signature_tv);
@@ -76,13 +74,6 @@ public class UserCenterActivity extends ToolbarActivity {
             signatureTV.setText(signatureStr);
         }
 
-        feedlistTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                startActivity(new Intent(UserCenterActivity.this, MyFeedListActivity.class));
-                startActivity(new Intent(UserCenterActivity.this, FeedListActivity.class));
-            }
-        });
         logoutTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

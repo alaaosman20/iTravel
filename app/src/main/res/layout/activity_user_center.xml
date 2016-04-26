@@ -11,7 +11,7 @@
         android:id="@+id/user_center_indexpage_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_25_160"
-        android:layout_marginTop="@dimen/height_2_160"
+        android:layout_marginTop="@dimen/height_3_160"
         android:background="@color/white"
         android:orientation="vertical">
 
@@ -49,7 +49,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="@dimen/height_2_160"
                 android:text="我是一只来自北方的狼"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:textSize="14sp"/>
         </LinearLayout>
 
@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginTop="@dimen/height_5_160"
+        android:layout_marginTop="@dimen/height_3_160"
         android:background="@color/white"
         android:orientation="vertical">
 
@@ -116,6 +116,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/user_center_colllect_tv"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_10_160"
             android:layout_marginLeft="@dimen/width_5_160"
@@ -129,11 +130,11 @@
                 android:src="@mipmap/user_center_feedback_icon"/>
 
             <TextView
-                android:id="@+id/id_user_center_feedback_tv"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/width_5_160"
-                android:text="我的反馈"
+                android:text="我的收藏"
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
         </LinearLayout>

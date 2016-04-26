@@ -52,11 +52,7 @@
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.xmliu.itravel.ui.MusicMainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".ui.FeedListActivity"
+            android:name=".ui.StrategyTabActivity"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
         <activity
@@ -97,11 +93,7 @@
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.xmliu.itravel.ui.MyFeedListActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name="com.xmliu.itravel.ui.AddActivity"
+            android:name=".ui.NoteAddActivity"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
         <activity

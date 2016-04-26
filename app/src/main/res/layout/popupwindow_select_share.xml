@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/height_1_160"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:text="新浪微博"/>
         </LinearLayout>
 
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/height_1_160"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:text="微信"/>
         </LinearLayout>
 
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/height_1_160"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:text="微信朋友圈"/>
         </LinearLayout>
     </LinearLayout>
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/height_1_160"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:text="qq"/>
         </LinearLayout>
 
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/height_1_160"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:text="qq空间"/>
         </LinearLayout>
 
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/height_1_160"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:text="短信"/>
         </LinearLayout>
     </LinearLayout>

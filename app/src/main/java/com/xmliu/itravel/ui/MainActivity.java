@@ -169,13 +169,13 @@ public class MainActivity extends AppCompatActivity {
         guideLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MusicMainActivity.class));
+                startActivity(new Intent(MainActivity.this, StrategyTabActivity.class));
             }
         });
         mEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult(new Intent(MainActivity.this, AddActivity.class), REQUEST_CODE_ADD);
+                startActivityForResult(new Intent(MainActivity.this, NoteAddActivity.class), REQUEST_CODE_ADD);
             }
         });
         avatarIV.setOnClickListener(new View.OnClickListener() {

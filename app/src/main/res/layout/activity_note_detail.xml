@@ -110,14 +110,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/width_1_160"
                 android:text="赞"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/micro_font_size"/>
         </LinearLayout>
 
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/gray"
+            android:background="@color/grey"
             android:layout_marginBottom="@dimen/width_3_160"
             android:layout_marginTop="@dimen/width_3_160"/>
 
@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/width_1_160"
                 android:text="评论"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/micro_font_size"/>
         </LinearLayout>
     </LinearLayout>

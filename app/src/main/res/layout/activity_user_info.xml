@@ -54,7 +54,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/gray"/>
+            android:background="@color/grey"/>
         <RelativeLayout
             android:id="@+id/user_info_userbg_layout"
             android:layout_width="match_parent"
@@ -123,13 +123,13 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerVertical="true"
                 android:text="你的昵称"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/grey"/>
         </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/gray"/>
+            android:background="@color/grey"/>
 
         <RelativeLayout
             android:id="@+id/user_info_gender_layout"
@@ -154,13 +154,13 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerVertical="true"
                 android:text="男"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/grey"/>
         </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/gray"/>
+            android:background="@color/grey"/>
 
         <RelativeLayout
             android:id="@+id/user_info_area_layout"
@@ -185,7 +185,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerVertical="true"
                 android:text="江苏 南京"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/grey"/>
         </RelativeLayout>
     </LinearLayout>
 
@@ -209,7 +209,7 @@
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_marginTop="@dimen/width_5_160"
-            android:background="@color/gray"/>
+            android:background="@color/grey"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/user_info_signature_et"
@@ -224,8 +224,8 @@
             app:met_baseColor="@color/black"
             app:met_clearButton="true"
             app:met_primaryColor="#982360"
-            app:met_textColorHint="@color/gray"
-            app:met_underlineColor="@color/gray"/>
+            app:met_textColorHint="@color/grey"
+            app:met_underlineColor="@color/grey"/>
     </LinearLayout>
 
 

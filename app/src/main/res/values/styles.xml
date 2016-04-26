@@ -36,7 +36,7 @@
     <style name="popdown_Animation" parent="@android:style/Animation">
         <item name="android:windowEnterAnimation">@anim/push_down_in</item>
         <item name="android:windowExitAnimation">@anim/push_down_out</item>
-        <item name="android:windowBackground">@color/gray</item>
+        <item name="android:windowBackground">@color/grey</item>
     </style>
     <style name="loading_dialog" parent="android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>

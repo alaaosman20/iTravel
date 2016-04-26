@@ -61,6 +61,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:clipToPadding="true"
         android:clickable="true"
         android:orientation="vertical">
 

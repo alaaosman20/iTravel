@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
-import com.xmliu.itravel.BaseActivity;
 import com.xmliu.itravel.R;
 
 /**
@@ -25,7 +24,7 @@ import com.xmliu.itravel.R;
  * Author: diyangxia
  * Description: TODO
  */
-public class MusicMainActivity extends BaseActivity{
+public class StrategyTabActivity extends ToolbarActivity{
 
     private BottomBar bottomBar;
 
@@ -34,6 +33,7 @@ public class MusicMainActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_strategy_tab);
+        toolbar.setTitle("攻略查看");
         contentTV = (TextView) findViewById(R.id.bottom_bar_tab_content);
         bottomBar = BottomBar.attach(this, savedInstanceState);
         bottomBar.setItemsFromMenu(R.menu.menu_bottom_bar, new OnMenuTabClickListener() {

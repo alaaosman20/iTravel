@@ -32,7 +32,7 @@
                 android:textSize="14sp"
                 android:padding="@dimen/width_3_160"
                 android:textColor="@color/black"
-                android:textColorHint="@color/gray"
+                android:textColorHint="@color/grey"
                 />
 
             <android.support.v7.widget.RecyclerView
@@ -90,7 +90,7 @@
                     android:hint="所在位置"
                     android:textSize="12sp"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/gray"
+                    android:textColorHint="@color/grey"
                     />
             </LinearLayout>
 
@@ -107,6 +107,7 @@
                     android:id="@+id/id_addnote_permission"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     style="@style/Material.Drawable.CheckBox"
                     app:cbd_strokeColor="@color/setting_switch_color_selector"
                     />
@@ -119,7 +120,7 @@
                     android:layout_marginRight="@dimen/width_5_160"
                     android:text="公开"
                     android:textSize="12sp"
-                    android:textColor="@color/gray"/>
+                    android:textColor="@color/grey"/>
 
             </LinearLayout>
         </RelativeLayout>

@@ -14,18 +14,12 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <TextView
-        android:text="行政区划搜索和地理围栏\n可以自主添加省份"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/height_5_160"
-        android:layout_marginBottom="@dimen/height_2_160"
-        android:textColor="@color/black"
-        android:textSize="22sp"/>
+
     <com.amap.api.maps2d.MapView
         android:id="@+id/map_fence_map"
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/height_5_160"
+        android:layout_marginBottom="@dimen/height_2_160"
         android:layout_height="match_parent"
       />
 </LinearLayout>
