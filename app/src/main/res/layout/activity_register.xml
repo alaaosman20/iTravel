@@ -101,12 +101,14 @@
                 app:paddingEnd="0dp"
                 app:paddingStart="0dp"/>
 
-            <Button
+            <com.rey.material.widget.Button
+                style="@style/Material.Drawable.Ripple.Wave.Light"
+                app:rd_enable="true"
+                android:background="@drawable/common_btn_bg"
                 android:id="@+id/id_send_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/height_10_160"
                 android:layout_marginLeft="@dimen/width_3_160"
-                android:background="@drawable/login_other_btn_bg"
                 android:paddingLeft="@dimen/width_3_160"
                 android:paddingRight="@dimen/width_3_160"
                 android:text="获取验证码"
@@ -148,13 +150,14 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <com.gc.materialdesign.views.CheckBox
-                    android:id="@+id/chat_register_password_checkbox"
-                    android:layout_width="@dimen/height_7_160"
-                    android:layout_height="@dimen/height_7_160"
-                    app:check="false"
-                    />
 
+                <com.rey.material.widget.CheckBox
+                    android:layout_marginLeft="@dimen/width_5_160"
+                    android:id="@+id/chat_register_password_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Material.Drawable.CheckBox"
+                    app:cbd_strokeColor="@color/setting_switch_color_selector"                    />
                 <TextView
                     android:id="@+id/id_addnote_permission_tip"
                     android:layout_width="wrap_content"
@@ -180,13 +183,16 @@
         android:orientation="horizontal"
         android:padding="@dimen/width_1_160"
         >
-
-        <com.gc.materialdesign.views.CheckBox
+        <com.rey.material.widget.CheckBox
+            android:layout_marginLeft="@dimen/width_5_160"
             android:id="@+id/register_protocol_checkbox"
-            android:layout_width="@dimen/width_6_160"
-            android:layout_height="@dimen/width_6_160"
-            app:check="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Material.Drawable.CheckBox"
+            android:checked="true"
+            app:cbd_strokeColor="@color/setting_switch_color_selector"
             />
+
 
         <TextView
             android:id="@+id/register_protocol_tv"
@@ -198,25 +204,29 @@
             android:textSize="12sp"/>
     </LinearLayout>
 
-    <Button
+    <com.rey.material.widget.Button
+        style="@style/Material.Drawable.Ripple.Wave.Light"
+        app:rd_enable="true"
+        android:background="@drawable/common_btn_bg"
         android:id="@+id/id_reg_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_10_160"
         android:layout_marginLeft="@dimen/width_18_160"
         android:layout_marginRight="@dimen/width_18_160"
-        android:background="@drawable/login_other_btn_bg"
         android:text="注 册"
         android:textColor="@color/white"
         android:textSize="14sp"
         />
 
-    <Button
+    <com.rey.material.widget.Button
+        style="@style/Material.Drawable.Ripple.Wave.Light"
+        app:rd_enable="true"
+        android:background="@drawable/common_btn_bg"
         android:id="@+id/id_reset_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_10_160"
         android:layout_marginLeft="@dimen/width_18_160"
         android:layout_marginRight="@dimen/width_18_160"
-        android:background="@drawable/login_other_btn_bg"
         android:enabled="false"
         android:text="重 置"
         android:textColor="@color/white"

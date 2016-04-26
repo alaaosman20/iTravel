@@ -12,13 +12,14 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gc.materialdesign.views.CheckBox;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.rey.material.widget.CheckBox;
 import com.xmliu.itravel.BaseActivity;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.UserBean;
@@ -158,7 +159,7 @@ public class RegisterActivity extends BaseActivity {
         mProtocolLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mProtocolCB.isCheck()) {
+                if (mProtocolCB.isChecked()) {
                     mProtocolCB.setChecked(false);
                     mProtocolTV.setTextColor(ContextCompat.getColor(RegisterActivity.this, R.color.gray));
                 } else {
@@ -223,10 +224,11 @@ public class RegisterActivity extends BaseActivity {
 
             }
         });
-        mPasswordCB.setOncheckListener(new CheckBox.OnCheckListener() {
+
+        mPasswordCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheck(CheckBox view, boolean check) {
-                if (check) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     mPasswordCB.setChecked(true);
                     //动态设置密码是否可见
                     mPasswordET
@@ -241,6 +243,7 @@ public class RegisterActivity extends BaseActivity {
                 mPasswordET.setSelection(mPasswordET.getText().toString().length());//设置光标位置在文本框末尾
             }
         });
+
 
         mPhoneET.addTextChangedListener(new MyTextWatcher(mPhoneET));
         mRegBtn.setOnClickListener(new View.OnClickListener() {
@@ -260,7 +263,7 @@ public class RegisterActivity extends BaseActivity {
                     CommonUtils.showToast(RegisterActivity.this, "密码不能为空");
                 } else if (StringUtils.isEmpty(mCodeStr)) {
                     CommonUtils.showToast(RegisterActivity.this, "验证码不能为空");
-                } else if (!mProtocolCB.isCheck()) {
+                } else if (!mProtocolCB.isChecked()) {
                     CommonUtils.showToast(RegisterActivity.this, "您还未同意用户协议");
                 } else {
                     CommonUtils.showProgressDialog(RegisterActivity.this, "正在注册");

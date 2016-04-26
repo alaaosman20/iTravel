@@ -23,10 +23,10 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gc.materialdesign.views.ButtonFloat;
 import com.google.gson.Gson;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.rey.material.app.SimpleDialog;
+import com.rey.material.widget.FloatingActionButton;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.NoteBean;
 import com.xmliu.itravel.bean.UserBean;
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private NoteListAdapter adapter;
 
     private Toolbar toolbar;
-    private ButtonFloat mEditBtn;
+    private FloatingActionButton mEditBtn;
     private RecyclerView mRecyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
     private DrawerLayout drawerLayout;
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppManager.getInstance().addActivity(this);
-        mEditBtn = (ButtonFloat) findViewById(R.id.main_edit_buttonfloat);
+        mEditBtn = (FloatingActionButton) findViewById(R.id.main_edit_buttonfloat);
         mRecyclerView = (RecyclerView) findViewById(R.id.aboutUs_recycleView);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_widget);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayou);

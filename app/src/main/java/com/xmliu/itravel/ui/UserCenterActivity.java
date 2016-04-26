@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rey.material.widget.Button;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.UserBean;
 import com.xmliu.itravel.utils.CommonUtils;
@@ -33,7 +34,7 @@ public class UserCenterActivity extends ToolbarActivity {
     private String userId;
     private int genderValue;
     private TextView feedlistTV;
-    private TextView logoutTV;
+    private Button logoutTV;
     private TextView nicknameTV;
     private TextView signatureTV;
     private CircleImageView avatarIV;
@@ -56,7 +57,7 @@ public class UserCenterActivity extends ToolbarActivity {
         genderValue = this.getIntent().getIntExtra("gender", -1);
 
         feedlistTV = (TextView) findViewById(R.id.id_user_center_feedback_tv);
-        logoutTV = (TextView) findViewById(R.id.id_user_center_logout_tv);
+        logoutTV = (Button) findViewById(R.id.id_user_center_logout_tv);
         nicknameTV = (TextView) findViewById(R.id.user_center_nickname_tv);
         signatureTV = (TextView) findViewById(R.id.user_center_signature_tv);
         avatarIV = (CircleImageView) findViewById(R.id.user_center_avatar_iv);

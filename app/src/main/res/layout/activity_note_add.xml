@@ -99,17 +99,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:paddingTop="@dimen/width_2_160"
-                android:paddingBottom="@dimen/width_2_160"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <com.gc.materialdesign.views.CheckBox
+                <com.rey.material.widget.CheckBox
                     android:layout_marginLeft="@dimen/width_5_160"
                     android:id="@+id/id_addnote_permission"
-                    android:layout_width="@dimen/height_7_160"
-                    android:layout_height="@dimen/height_7_160"
-                    app:check="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Material.Drawable.CheckBox"
+                    app:cbd_strokeColor="@color/setting_switch_color_selector"
                     />
 
                 <TextView
@@ -125,7 +124,9 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <Button
+
+        <com.rey.material.widget.Button
+            style="@style/Material.Drawable.Ripple.Wave.Light"
             android:id="@+id/id_addnote_submit_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_10_160"
@@ -134,9 +135,10 @@
             android:layout_marginLeft="@dimen/width_5_160"
             android:layout_marginRight="@dimen/width_5_160"
             android:layout_marginTop="@dimen/height_3_160"
-            android:background="@drawable/login_other_btn_bg"
+            android:background="@drawable/common_btn_bg"
+            app:rd_enable="true"
             android:text="发 布"
-            android:textColor="#ffffff"
+            android:textColor="@color/white"
             />
 
     </LinearLayout>

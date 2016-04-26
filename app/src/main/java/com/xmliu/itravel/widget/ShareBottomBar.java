@@ -6,10 +6,10 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
+import com.rey.material.widget.Button;
 import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
 

@@ -136,6 +136,5 @@
     <orderEntry type="library" exported="" name="ShareSDK-Wechat-Favorite-2.6.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-SinaWeibo-2.6.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Core-2.6.6" level="project" />
-    <orderEntry type="module" module-name="MaterialDesign" exported="" />
   </component>
 </module>

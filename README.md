@@ -7,7 +7,7 @@
   
 **目录结构如下：**</br>
  - app：主项目</br>
- - MaterialDesign：MD项目，修改了部分代码</br>
+ - MaterialDesign：MD项目，修改了部分代码，原因参见<https://github.com/navasmdc/MaterialDesignLibrary/issues/274></br>
  - photoexif：工具项目，读取图片Exif信息的</br>
  - timerdata：辅助项目，倒计时功能</br>
  - xmlibrary：个人项目库，目前为空</br></br>

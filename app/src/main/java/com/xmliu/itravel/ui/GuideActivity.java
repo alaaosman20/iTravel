@@ -8,10 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.rey.material.widget.Button;
 import com.xmliu.itravel.BaseActivity;
 import com.xmliu.itravel.R;
 

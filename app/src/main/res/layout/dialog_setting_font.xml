@@ -55,12 +55,14 @@
         />
 
 
-    <Button
+    <com.rey.material.widget.Button
+        style="@style/Material.Drawable.Ripple.Wave.Light"
+        app:rd_enable="true"
+        android:background="@drawable/common_btn_bg"
         android:id="@+id/setting_font_submit"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_10_160"
         android:layout_marginTop="@dimen/height_2_160"
-        android:background="@drawable/login_other_btn_bg"
         android:text="确定"
         android:textColor="@color/white"/>
 </LinearLayout>

@@ -9,14 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.gc.materialdesign.views.CheckBox;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rey.material.widget.Button;
+import com.rey.material.widget.CheckBox;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.ImageBean;
 import com.xmliu.itravel.bean.NoteBean;
@@ -74,16 +75,17 @@ public class AddActivity extends ToolbarActivity {
         mPermissionTV = (TextView) findViewById(R.id.id_addnote_permission_tip);
         mPermissionCB = (CheckBox) findViewById(R.id.id_addnote_permission);
 
-        mPermissionCB.setOncheckListener(new CheckBox.OnCheckListener() {
+        mPermissionCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheck(CheckBox view, boolean check) {
-                if (check) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     mPermissionTV.setText("公开");
                 } else {
                     mPermissionTV.setText("私密");
                 }
             }
         });
+
 
         addressLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +99,7 @@ public class AddActivity extends ToolbarActivity {
             public void onClick(View v) {
                 String content = contentET.getText().toString().trim();
                 String address = addressTV.getText().toString().trim();
-                boolean isopen = mPermissionCB.isCheck();
+                boolean isopen = mPermissionCB.isChecked();
                 if (StringUtils.isBlank(content)) {
                     CommonUtils.showToast(AddActivity.this, "内容不能为空");
                 } else {

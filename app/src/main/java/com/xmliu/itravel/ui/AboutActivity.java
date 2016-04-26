@@ -8,13 +8,13 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.rey.material.widget.Button;
 import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.VersionBean;

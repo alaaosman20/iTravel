@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/guide_item_image"
@@ -16,18 +17,18 @@
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"/>
 
-
-    <Button
+    <com.rey.material.widget.Button
+        style="@style/Material.Drawable.Ripple.Wave.Light"
+        app:rd_enable="true"
+        android:background="@drawable/common_btn_bg"
         android:id="@+id/guide_start_btn"
         android:layout_width="@dimen/width_80_160"
         android:layout_height="@dimen/height_10_160"
-        android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/height_15_160"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/login_other_btn_bg"
-        android:text="立即体验"
         android:visibility="gone"
+        android:text="立即体验"
         android:textColor="@color/white"
         />
-
 </RelativeLayout>

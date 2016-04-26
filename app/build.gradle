@@ -78,7 +78,6 @@ dependencies {
     compile 'com.github.rey5137:material:1.2.2'
 
     compile name: 'SMSSDK-2.0.1', ext: 'aar'
-    compile project(':MaterialDesign')
     compile files('libs/BmobSDK_V3.a_bg.5_1111.jar')
     compile files('libs/ShareSDK-Core-2.6.6.jar')
     compile files('libs/ShareSDK-Email-2.6.6.jar')

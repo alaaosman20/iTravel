@@ -7,11 +7,27 @@
     android:background="@color/weixin_bgcolor"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_60_160"
         android:layout_margin="@dimen/width_10_160"
         android:background="@drawable/login_linear_btn_bg">
+
+        <EditText
+            android:textSize="14sp"
+            android:id="@+id/id_feedback_content_et"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:gravity="top"
+            android:hint="请输入意见或者建议"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"
+            android:imeOptions="actionNext"
+            android:padding="@dimen/width_5_160"
+           />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -63,22 +79,8 @@
                 android:textSize="13sp"/>
         </LinearLayout>
 
-        <EditText
-            android:textSize="14sp"
-            android:id="@+id/id_feedback_content_et"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/transparent"
-            android:gravity="top"
-            android:hint="请输入意见或者建议"
-            android:textColorHint="@color/gray"
-            android:textColor="@color/black"
-            android:imeOptions="actionNext"
-            android:paddingLeft="@dimen/width_5_160"
-            android:paddingRight="@dimen/width_43_160"
-            android:paddingTop="@dimen/width_5_160"/>
-    </RelativeLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -139,16 +141,17 @@
             />
     </LinearLayout>
 
-    <com.gc.materialdesign.views.ButtonRectangle
+    <com.rey.material.widget.Button
+        style="@style/Material.Drawable.Ripple.Wave.Light"
         android:id="@+id/id_feedback_submit_btn"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_14_160"
+        android:layout_height="@dimen/height_10_160"
         android:layout_marginBottom="@dimen/width_5_160"
         android:layout_marginLeft="@dimen/width_10_160"
         android:layout_marginRight="@dimen/width_10_160"
         android:layout_marginTop="@dimen/width_5_160"
-        android:background="@color/darkturquoise"
-        android:enabled="false"
+        android:background="@drawable/common_btn_bg"
+        app:rd_enable="true"
         android:text="提 交"
         android:textColor="#ffffff"
         />

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MaterialDesign/MaterialDesign.iml" filepath="$PROJECT_DIR$/MaterialDesign/MaterialDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/iTravel.iml" filepath="$PROJECT_DIR$/iTravel.iml" />
       <module fileurl="file://$PROJECT_DIR$/photoexif/photoexif.iml" filepath="$PROJECT_DIR$/photoexif/photoexif.iml" />

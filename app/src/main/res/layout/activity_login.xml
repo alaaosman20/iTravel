@@ -78,14 +78,16 @@
             app:met_underlineColor="@color/white" />
 
 
-        <Button
+        <com.rey.material.widget.Button
+            style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:rd_enable="true"
+            android:background="@drawable/common_btn_bg"
             android:id="@+id/id_login_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_12_160"
             android:layout_marginLeft="@dimen/width_22_160"
             android:layout_marginRight="@dimen/width_22_160"
             android:layout_marginTop="15dp"
-            android:background="@drawable/login_other_btn_bg"
             android:text="登 录"
             android:textColor="@color/white"
             android:textSize="14sp" />

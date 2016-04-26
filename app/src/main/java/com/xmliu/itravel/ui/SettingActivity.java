@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -14,6 +13,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bugtags.library.Bugtags;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rey.material.widget.Button;
 import com.rey.material.widget.Slider;
 import com.rey.material.widget.Switch;
 import com.xmliu.itravel.Constants;

@@ -40,7 +40,7 @@
                     />
             </android.support.v4.widget.SwipeRefreshLayout>
 
-            <com.gc.materialdesign.views.ButtonFloat
+            <com.rey.material.widget.FloatingActionButton
                 android:id="@+id/main_edit_buttonfloat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,9 +48,11 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/height_3_160"
                 android:layout_marginBottom="@dimen/height_3_160"
-                android:background="@color/colorPrimary"
-                app:animate="true"
-                app:iconDrawable="@mipmap/myalbum_addpicture"/>
+                app:fab_animDuration="2000"
+                app:fab_iconSrc="@mipmap/myalbum_addpicture"
+                style="@style/Material.Widget.FloatingActionButton.Light"
+                app:fab_backgroundColor="@color/colorPrimary"
+                />
         </RelativeLayout>
     </LinearLayout>
     <!--DrawerLayout Content-->

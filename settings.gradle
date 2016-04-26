@@ -1,2 +1,2 @@
-include ':app', ':timerdata',  ":MaterialDesign",":photoexif",":xmlibrary"
+include ':app', ':timerdata', ":photoexif",":xmlibrary"
 

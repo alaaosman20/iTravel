@@ -8,8 +8,8 @@ import android.widget.ImageView;
 
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsCallback;
-import com.gc.materialdesign.views.ButtonRectangle;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rey.material.widget.Button;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.FeedbackBean;
 import com.xmliu.itravel.bean.ImageBean;
@@ -39,7 +39,7 @@ public class FeedbackActivity extends ToolbarActivity {
     private ImageView addImageIV;
     private ImageView imageIV;
     private ImageView deleteIV;
-    private ButtonRectangle submitBtn;
+    private Button submitBtn;
     private EditText contentET;
     private EditText phoneET;
     private static final int REQUEST_CODE_ALBUM = 200;
@@ -54,7 +54,7 @@ public class FeedbackActivity extends ToolbarActivity {
         addImageIV = (ImageView) findViewById(R.id.id_feedback_upload_iv);
         imageIV = (ImageView) findViewById(R.id.id_feedback_display_iv);
         deleteIV = (ImageView) findViewById(R.id.id_feedback_delete_iv);
-        submitBtn = (ButtonRectangle) findViewById(R.id.id_feedback_submit_btn);
+        submitBtn = (Button) findViewById(R.id.id_feedback_submit_btn);
         contentET = (EditText) findViewById(R.id.id_feedback_content_et);
         phoneET = (EditText) findViewById(R.id.feedback_phone_et);
 
