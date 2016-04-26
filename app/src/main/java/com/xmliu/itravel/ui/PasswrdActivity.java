@@ -3,8 +3,8 @@ package com.xmliu.itravel.ui;
 import android.os.Bundle;
 import android.view.View;
 
-import com.rengwuxian.materialedittext.MaterialEditText;
 import com.rey.material.widget.Button;
+import com.rey.material.widget.EditText;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.StringUtils;
@@ -20,9 +20,9 @@ import cn.bmob.v3.listener.UpdateListener;
  */
 public class PasswrdActivity extends ToolbarActivity {
 
-    private MaterialEditText oldpassET;
-    private MaterialEditText newpassET;
-    private MaterialEditText newpass2ET;
+    private EditText oldpassET;
+    private EditText newpassET;
+    private EditText newpass2ET;
     private Button submitBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,9 @@ public class PasswrdActivity extends ToolbarActivity {
 
         toolbar.setTitle("修改密码");
 
-        oldpassET = (MaterialEditText) findViewById(R.id.password_old_et);
-        newpassET = (MaterialEditText) findViewById(R.id.password_new_et);
-        newpass2ET = (MaterialEditText) findViewById(R.id.password_new2_et);
+        oldpassET = (EditText) findViewById(R.id.password_old_et);
+        newpassET = (EditText) findViewById(R.id.password_new_et);
+        newpass2ET = (EditText) findViewById(R.id.password_new2_et);
         submitBtn = (Button) findViewById(R.id.password_submit_btn);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {

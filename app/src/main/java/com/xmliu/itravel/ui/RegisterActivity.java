@@ -18,14 +18,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rengwuxian.materialedittext.MaterialEditText;
 import com.rey.material.widget.CheckBox;
+import com.rey.material.widget.EditText;
 import com.xmliu.itravel.BaseActivity;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.UserBean;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.LogUtil;
-import com.xmliu.itravel.utils.MyTextWatcher;
 import com.xmliu.itravel.utils.StringUtils;
 
 import org.json.JSONObject;
@@ -33,10 +32,7 @@ import org.json.JSONObject;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobSMS;
-import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.RequestSMSCodeListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.smssdk.EventHandler;
@@ -49,9 +45,9 @@ import cn.smssdk.SMSSDK;
 public class RegisterActivity extends BaseActivity {
 
 
-    private MaterialEditText mPhoneET;
-    private MaterialEditText mCodeET;
-    private MaterialEditText mPasswordET;
+    private EditText mPhoneET;
+    private EditText mCodeET;
+    private EditText mPasswordET;
 
     private Button mResetBtn;
     private Button mSendBtn;
@@ -116,10 +112,10 @@ public class RegisterActivity extends BaseActivity {
             }
         };
 
-        mCodeET = (MaterialEditText) findViewById(R.id.id_code_et);
-        mPhoneET = (MaterialEditText) findViewById(R.id.id_phone_et);
+        mCodeET = (EditText) findViewById(R.id.id_code_et);
+        mPhoneET = (EditText) findViewById(R.id.id_phone_et);
         mRegBtn = (Button) findViewById(R.id.id_reg_btn);
-        mPasswordET = (MaterialEditText) findViewById(R.id.id_password_et);
+        mPasswordET = (EditText) findViewById(R.id.id_password_et);
         mResetBtn = (Button) findViewById(R.id.id_reset_btn);
         mSendBtn = (Button) findViewById(R.id.id_send_btn);
         mPasswordCB = (CheckBox) findViewById(R.id.chat_register_password_checkbox);
@@ -259,7 +255,7 @@ public class RegisterActivity extends BaseActivity {
         });
 
 
-        mPhoneET.addTextChangedListener(new MyTextWatcher(mPhoneET));
+//        mPhoneET.addTextChangedListener(new MyTextWatcher(mPhoneET));
         mRegBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

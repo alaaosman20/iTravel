@@ -8,14 +8,13 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.rengwuxian.materialedittext.MaterialEditText;
+import com.rey.material.widget.EditText;
 import com.xmliu.itravel.BaseActivity;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.UserBean;
 import com.xmliu.itravel.utils.AppManager;
 import com.xmliu.itravel.utils.CommonUtils;
 import com.xmliu.itravel.utils.LogUtil;
-import com.xmliu.itravel.utils.MyTextWatcher;
 import com.xmliu.itravel.utils.StringUtils;
 
 import cn.bmob.v3.listener.SaveListener;
@@ -26,8 +25,8 @@ import cn.bmob.v3.listener.SaveListener;
  */
 public class LoginActivity extends BaseActivity {
 
-    private MaterialEditText mPhoneET;
-    private MaterialEditText mPasswordET;
+    private EditText mPhoneET;
+    private EditText mPasswordET;
     private Button mLoginBtn;
     private TextView mRegTV;
     private TextView mResetTV;
@@ -38,14 +37,14 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         LogUtil.e(TAG, "onCreate");
 
-        mPhoneET = (MaterialEditText) findViewById(R.id.id_phone_et);
-        mPasswordET = (MaterialEditText) findViewById(R.id.id_password_et);
+        mPhoneET = (EditText) findViewById(R.id.id_phone_et);
+        mPasswordET = (EditText) findViewById(R.id.id_password_et);
 
 //        mPhoneET.setError("手机号码不正确");
         mLoginBtn = (Button) findViewById(R.id.id_login_btn);
         mRegTV = (TextView) findViewById(R.id.id_reg_tv);
         mResetTV = (TextView) findViewById(R.id.id_reset_tv);
-        mPhoneET.addTextChangedListener(new MyTextWatcher(mPhoneET));
+//        mPhoneET.addTextChangedListener(new MyTextWatcher(mPhoneET));
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

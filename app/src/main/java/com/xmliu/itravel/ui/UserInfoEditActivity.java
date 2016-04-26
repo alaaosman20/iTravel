@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.rengwuxian.materialedittext.MaterialEditText;
+import com.rey.material.widget.EditText;
 import com.xmliu.itravel.Constants;
 import com.xmliu.itravel.R;
 import com.xmliu.itravel.bean.ImageBean;
@@ -54,7 +54,7 @@ public class UserInfoEditActivity extends ToolbarActivity implements UserView,Up
     private TextView nicknameTV;
     private TextView genderTV;
     private TextView areaTV;
-    private MaterialEditText signatureET;
+    private EditText signatureET;
 
     private RelativeLayout avatarLayout;
     private RelativeLayout userbgLayout;
@@ -89,7 +89,7 @@ public class UserInfoEditActivity extends ToolbarActivity implements UserView,Up
 
         avatarIV = (CircleImageView) findViewById(R.id.user_info_avatar_iv);
         userbgIV = (ImageView) findViewById(R.id.user_info_userbg_iv);
-        signatureET = (MaterialEditText) findViewById(R.id.user_info_signature_et);
+        signatureET = (EditText) findViewById(R.id.user_info_signature_et);
         nicknameTV = (TextView) findViewById(R.id.user_info_nickname_tv);
         genderTV = (TextView) findViewById(R.id.user_info_gender_tv);
         areaTV = (TextView) findViewById(R.id.user_info_area_tv);

@@ -28,7 +28,7 @@
             android:textColor="@color/white"
             android:textSize="30sp" />
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+        <com.rey.material.widget.EditText
             android:id="@+id/id_phone_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,22 +39,11 @@
             android:imeOptions="actionNext"
             android:inputType="phone"
             android:textSize="14sp"
-            app:met_baseColor="@color/white"
-            app:met_clearButton="true"
-            app:met_errorColor="@color/red"
-            app:met_floatingLabel="highlight"
-            app:met_floatingLabelText="手机号"
-            app:met_iconLeft="@mipmap/login_user"
-            app:met_iconPadding="0dp"
-            app:met_maxCharacters="13"
-            app:met_primaryColor="@color/white"
-            app:met_textColorHint="@color/white"
-            app:met_underlineColor="@color/white"
-            app:paddingEnd="0dp"
-            app:paddingStart="0dp" />
+
+             />
 
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+        <com.rey.material.widget.EditText
             android:id="@+id/id_password_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,17 +54,7 @@
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:textSize="14sp"
-            app:met_baseColor="@color/white"
-            app:met_clearButton="true"
-            app:met_errorColor="@color/red"
-            app:met_floatingLabel="highlight"
-            app:met_floatingLabelText="密码"
-            app:met_iconLeft="@mipmap/login_password"
-            app:met_iconPadding="0dp"
-            app:met_maxCharacters="20"
-            app:met_primaryColor="@color/white"
-            app:met_textColorHint="@color/white"
-            app:met_underlineColor="@color/white" />
+         />
 
 
         <com.rey.material.widget.Button
