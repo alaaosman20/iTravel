@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_12_160"
-        android:background="@color/theme_color">
+        android:background="@color/colorPrimary">
 
         <ImageButton
             android:id="@+id/common_back_btn"
@@ -59,9 +59,20 @@
             android:imeOptions="actionNext"
             android:inputType="phone"
             android:textSize="14sp"
+            app:et_dividerColor="@color/weixin_bgcolor"
+            app:et_dividerErrorColor="@color/red"
+            app:et_dividerHeight="@dimen/width_1_160"
+            app:et_dividerPadding="@dimen/height_1_160"
+            app:et_labelEnable="true"
+            app:et_labelTextSize="10sp"
+            app:et_supportMaxChars="11"
+            app:et_supportMode="charCounter"
+            app:et_supportTextColor="@color/weixin_bgcolor"
+            app:et_supportTextErrorColor="@color/red"
             />
 
         <LinearLayout
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -75,6 +86,16 @@
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:textSize="14sp"
+                app:et_dividerColor="@color/weixin_bgcolor"
+                app:et_dividerErrorColor="@color/red"
+                app:et_dividerHeight="@dimen/width_1_160"
+                app:et_dividerPadding="@dimen/height_1_160"
+                app:et_labelEnable="true"
+                app:et_labelTextSize="10sp"
+                app:et_supportMaxChars="4"
+                app:et_supportMode="charCounter"
+                app:et_supportTextColor="@color/weixin_bgcolor"
+                app:et_supportTextErrorColor="@color/red"
                />
 
             <com.rey.material.widget.Button
@@ -107,6 +128,14 @@
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:textSize="14sp"
+                app:et_dividerColor="@color/weixin_bgcolor"
+                app:et_dividerErrorColor="@color/red"
+                app:et_dividerHeight="@dimen/width_1_160"
+                app:et_dividerPadding="@dimen/height_1_160"
+                app:et_labelEnable="true"
+                app:et_labelTextSize="10sp"
+                app:et_supportTextColor="@color/weixin_bgcolor"
+                app:et_supportTextErrorColor="@color/red"
                />
 
             <LinearLayout
@@ -166,7 +195,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/width_1_160"
             android:text="已同意用户协议"
-            android:textColor="@color/theme_color"
+            android:textColor="@color/colorPrimary"
             android:textSize="12sp"/>
     </LinearLayout>
 

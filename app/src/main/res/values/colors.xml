@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--墨绿色-->
-    <color name="theme_color3">#1F4131</color>
-    <!--深绿色 43,144,86-->
-    <color name="theme_color">#2B9056</color>
-    <!--竹绿色-->
-    <color name="theme_color2">#71A93A</color>
-
     <color name="common_tab_bg_light_grey">#D9DCE1</color>
 
     <color name="light_black">#EE000000</color>

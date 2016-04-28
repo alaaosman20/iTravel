@@ -163,7 +163,7 @@ public class RegisterActivity extends BaseActivity {
                     mProtocolTV.setTextColor(ContextCompat.getColor(RegisterActivity.this, R.color.grey));
                 } else {
                     mProtocolCB.setChecked(true);
-                    mProtocolTV.setTextColor(ContextCompat.getColor(RegisterActivity.this, R.color.theme_color));
+                    mProtocolTV.setTextColor(ContextCompat.getColor(RegisterActivity.this, R.color.colorPrimary));
                 }
             }
         });
@@ -183,16 +183,6 @@ public class RegisterActivity extends BaseActivity {
         mSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                BmobSMS.requestSMSCode(RegisterActivity.this, "15250480155", "好旅", new RequestSMSCodeListener() {
-//
-//                    @Override
-//                    public void done(Integer smsId, BmobException ex) {
-//                        // TODO Auto-generated method stub
-//                        if (ex == null) {//验证码发送成功
-//                            LogUtil.i("TAG", "短信id：" + smsId);//用于查询本次短信发送详情
-//                        }
-//                    }
-//                });
                 final String mPhoneStr = mPhoneET.getText().toString().trim()
                         .replaceAll(" ", "");
                 if (StringUtils.isBlank(mPhoneStr)) {

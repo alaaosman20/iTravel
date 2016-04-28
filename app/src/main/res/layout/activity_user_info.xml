@@ -221,6 +221,14 @@
             android:imeOptions="actionNext"
             android:paddingLeft="@dimen/width_3_160"
             android:textSize="14sp"
+            app:et_dividerColor="@color/weixin_bgcolor"
+            app:et_dividerErrorColor="@color/red"
+            app:et_dividerHeight="@dimen/width_1_160"
+            app:et_dividerPadding="@dimen/height_1_160"
+            app:et_labelEnable="true"
+            app:et_labelTextSize="10sp"
+            app:et_supportTextColor="@color/weixin_bgcolor"
+            app:et_supportTextErrorColor="@color/red"
            />
     </LinearLayout>
 
