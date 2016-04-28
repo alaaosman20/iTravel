@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/iTravel.iml" filepath="$PROJECT_DIR$/iTravel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/photoexif/photoexif.iml" filepath="$PROJECT_DIR$/photoexif/photoexif.iml" />
       <module fileurl="file://$PROJECT_DIR$/timerdata/timerdata.iml" filepath="$PROJECT_DIR$/timerdata/timerdata.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xmlibrary/xmlibrary.iml" filepath="$PROJECT_DIR$/xmlibrary/xmlibrary.iml" />
     </modules>
   </component>
 </project>

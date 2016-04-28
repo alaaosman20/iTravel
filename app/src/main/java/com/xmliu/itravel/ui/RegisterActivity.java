@@ -183,7 +183,7 @@ public class RegisterActivity extends BaseActivity {
         mSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                BmobSMS.requestSMSCode(RegisterActivity.this, "15250480155", "海贼之路", new RequestSMSCodeListener() {
+//                BmobSMS.requestSMSCode(RegisterActivity.this, "15250480155", "好旅", new RequestSMSCodeListener() {
 //
 //                    @Override
 //                    public void done(Integer smsId, BmobException ex) {

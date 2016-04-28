@@ -48,6 +48,10 @@
 
 
         <activity
+            android:name="com.xmliu.itravel.ui.PhotoExifActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name="com.xmliu.itravel.ui.SettingnLawActivity"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
